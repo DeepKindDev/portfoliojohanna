@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+  <meta name="description" content="Johanna Toppinen – viestinnän, markkinoinnin ja ihmislähtöisen kehittämisen asiantuntija. Sosiaalialan pohja, neuropsykiatrinen valmennus, digitaaliset järjestelmät.">
+  <meta name="keywords" content="viestintäasiantuntija, markkinointi, kehittäminen, sosiaaliala, neuropsykiatrinen valmennus, sisällöntuotanto, koulutussuunnittelu">
+  <meta name="author" content="Johanna Toppinen">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Johanna Toppinen – Portfolio">
+  <meta property="og:description" content="Viestinnän, markkinoinnin ja ihmislähtöisen kehittämisen asiantuntija – sosiaalialan sydämellä, digitaalisen tekemisen käsillä.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deepkinddev.github.io/portfoliojohanna/">
+  <meta property="og:image" content="https://deepkinddev.github.io/portfoliojohanna/preview.png">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://deepkinddev.github.io/portfoliojohanna/preview.png">
+  <link rel="canonical" href="https://deepkinddev.github.io/portfoliojohanna/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johanna Toppinen – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+
+/* ─── TOKENS ────────────────────────────────────────────── */
+:root{
+  --sage:      #e8edd5;
+  --sage2:     #d8e3be;
+  --teal:      #5ba3a0;
+  --teal2:     #4a9190;
+  --teal-pale: #eaf4f4;
+  --coral:     #e07b5a;
+  --coral2:    #cc6844;
+  --coral-pale:#fdf1ec;
+  --cream:     #faf9f4;
+  --dark:      #263029;
+  --mid:       #415244;
+  --soft:      #6d806f;
+  --rule:      #dce8c8;
+  --white:     #ffffff;
+}
+
+/* ─── RESET ─────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6}
+
+/* ─── NAV ───────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,249,244,.93);backdrop-filter:blur(14px);
+  border-bottom:2px solid var(--sage);
+  height:62px;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-name{font-weight:900;font-size:1rem;color:var(--teal);letter-spacing:-.3px;text-decoration:none;cursor:pointer}
+.nav-name:hover{opacity:.75}
+.nav-links{display:flex;gap:.3rem;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--mid);font-weight:700;font-size:.82rem;
+  padding:.3rem .85rem;border-radius:50px;transition:all .2s
+}
+.nav-links a:hover{background:var(--teal);color:#fff}
+
+/* ─── HERO ──────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;background:var(--sage);
+  display:flex;align-items:center;justify-content:center;
+  padding:90px 2.5rem 5rem;
+  position:relative;overflow:hidden;
+}
+
+/* Morphing blob shapes – refined, not bouncing balls */
+.blob{position:absolute;opacity:.2;pointer-events:none;filter:blur(1px)}
+.blob-1{
+  width:520px;height:520px;top:-160px;right:-120px;
+  background:var(--teal);
+  border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation:morph1 12s ease-in-out infinite;
+}
+.blob-2{
+  width:360px;height:360px;bottom:-80px;left:-80px;
+  background:var(--coral);
+  border-radius:40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation:morph2 15s ease-in-out infinite;
+}
+.blob-3{
+  width:180px;height:180px;top:38%;left:42%;
+  background:var(--teal2);opacity:.1;
+  border-radius:50% 50% 30% 70%/30% 70% 50% 50%;
+  animation:morph1 18s ease-in-out infinite reverse;
+}
+@keyframes morph1{
+  0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
+  33%    {border-radius:40% 60% 70% 30%/40% 50% 60% 50%}
+  66%    {border-radius:70% 30% 50% 50%/30% 40% 70% 60%}
+}
+@keyframes morph2{
+  0%,100%{border-radius:40% 60% 70% 30%/40% 50% 60% 50%}
+  33%    {border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
+  66%    {border-radius:30% 70% 40% 60%/50% 60% 40% 40%}
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:auto 1fr;
+  gap:4.5rem;align-items:center;
+  max-width:960px;width:100%;
+}
+.hero-photo-col{position:relative;flex-shrink:0}
+.photo-frame{
+  width:230px;height:230px;border-radius:28px;
+  background:linear-gradient(135deg,var(--teal-pale),white);
+  border:5px solid white;
+  box-shadow:0 4px 0 var(--sage2),0 12px 40px rgba(91,163,160,.22);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  font-size:5rem;position:relative;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-note{font-size:.68rem;color:var(--soft);font-style:italic;text-align:center;margin-top:.5rem}
+.badge{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:20;background:var(--coral);color:#fff;font-size:.72rem;font-weight:800;padding:.32rem .9rem;border-radius:50px;white-space:nowrap;letter-spacing:.04em;box-shadow:0 2px 12px rgba(224,123,90,.35)}
+
+.hero-text{}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--teal-pale);border:1.5px solid rgba(91,163,160,.35);
+  color:var(--teal2);border-radius:50px;
+  font-size:.73rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+  padding:.28rem .9rem;margin-bottom:.9rem;
+}
+.hero-text h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.3rem;line-height:1.1;color:var(--dark);margin-bottom:.85rem;
+}
+.hero-text h1 span{color:var(--teal)}
+.hero-desc{
+  font-size:1rem;color:var(--mid);line-height:1.75;
+  max-width:480px;margin-bottom:1.75rem;font-weight:600;
+}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
+.chip{font-size:.79rem;font-weight:700;padding:.28rem .85rem;border-radius:50px}
+.c-teal {background:var(--teal);color:#fff}
+.c-coral{background:var(--coral);color:#fff}
+.c-sage {background:white;color:var(--mid);border:2px solid var(--rule)}
+.c-dark {background:var(--dark);color:#fff}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--teal);color:#fff;text-decoration:none;
+  font-weight:800;font-size:.95rem;
+  padding:.82rem 1.9rem;border-radius:50px;
+  box-shadow:0 6px 20px rgba(91,163,160,.35);
+  transition:all .22s;
+}
+.hero-cta:hover{background:var(--dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(38,48,41,.25)}
+
+/* ─── SHARED SECTION STYLES ─────────────────────────────── */
+section{padding:5rem 2.5rem}
+.container{max-width:960px;margin:0 auto}
+.sec-label{
+  display:inline-block;
+  font-size:.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  padding:.28rem .9rem;border-radius:50px;margin-bottom:.85rem;
+}
+.sl-teal {background:var(--teal);color:#fff}
+.sl-coral{background:var(--coral);color:#fff}
+.sl-dark {background:var(--dark);color:#fff}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.25rem;line-height:1.2;color:var(--dark);margin-bottom:.75rem;
+}
+.lead{font-size:1rem;color:var(--soft);max-width:660px;line-height:1.75;margin-bottom:2.5rem;font-weight:600}
+
+/* ─── BACKGROUND ─────────────────────────────────────────── */
+#taustani{background:#fff}
+.bg3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem}
+.bg-card{
+  background:var(--sage);border-radius:20px;padding:1.75rem;
+  position:relative;overflow:hidden;transition:transform .2s;
+}
+.bg-card:hover{transform:translateY(-3px)}
+.bg-card::after{
+  content:'';position:absolute;top:-24px;right:-24px;
+  width:80px;height:80px;border-radius:50%;opacity:.18;
+}
+.bg-card.t::after{background:var(--teal)}
+.bg-card.c::after{background:var(--coral)}
+.bg-card.s::after{background:var(--sage2)}
+.bg-card-ico{font-size:2rem;margin-bottom:.65rem}
+.bg-card h3{font-size:.95rem;font-weight:800;color:var(--dark);margin-bottom:.4rem}
+.bg-card p{font-size:.86rem;color:var(--mid);line-height:1.65}
+
+.edu-bar{
+  background:var(--sage);border-radius:16px;
+  padding:1.25rem 1.6rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;
+}
+.edu-bar strong{font-size:.82rem;font-weight:800;color:var(--dark);margin-right:.25rem}
+.etag{
+  background:#fff;color:var(--mid);
+  border:2px solid var(--rule);
+  font-size:.77rem;font-weight:700;
+  padding:.18rem .7rem;border-radius:50px;
+}
+
+/* ─── RESULTS ────────────────────────────────────────────── */
+#tulokset{background:var(--sage)}
+.res3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin-bottom:1.5rem}
+.r-card{
+  background:#fff;border-radius:20px;padding:1.5rem 1.25rem;text-align:center;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.r-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.r-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:var(--teal);
+}
+.r-card.rc::after{background:var(--coral)}
+.r-card.rs::after{background:var(--sage2)}
+.r-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.7rem;line-height:1;color:var(--teal);margin-bottom:.25rem;
+}
+.r-num.coral{color:var(--coral)}
+.r-label{font-size:.83rem;font-weight:700;color:var(--mid);line-height:1.45}
+.r-note{font-size:.73rem;color:var(--soft);margin-top:.35rem;line-height:1.45}
+
+.res-callout{
+  background:var(--teal);color:#fff;border-radius:20px;
+  padding:1.75rem 2rem;font-size:.97rem;font-weight:600;line-height:1.75;
+}
+.res-callout strong{font-weight:900}
+
+/* ─── SKILLS ─────────────────────────────────────────────── */
+#osaaminen{background:#fff}
+.sk2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.sk-block{background:var(--sage);border-radius:20px;padding:1.75rem}
+.sk-block h3{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.sk-row{display:flex;gap:.55rem;align-items:flex-start;margin-bottom:.6rem}
+.sk-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+.sk-dot.c{background:var(--coral)}
+.sk-row p{font-size:.86rem;color:var(--mid);line-height:1.5}
+.sk-row strong{color:var(--dark);font-weight:800}
+
+.sk-special{
+  background:var(--dark);color:#fff;border-radius:20px;padding:1.75rem;
+  grid-column:1/-1;
+}
+.sk-special h3{font-size:.9rem;font-weight:800;color:var(--teal-pale);margin-bottom:.75rem}
+.sk-special p{font-size:.9rem;line-height:1.75;opacity:.88}
+.t-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.t-chip{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:.75rem;font-weight:700;
+  padding:.2rem .65rem;border-radius:50px;
+}
+
+.ai-block{
+  background:linear-gradient(135deg,#1c2e2c,#263029);
+  color:#fff;border-radius:20px;padding:1.75rem;
+  grid-column:1/-1;
+  border:1.5px solid rgba(91,163,160,.3);
+  position:relative;overflow:hidden;
+}
+.ai-block::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(91,163,160,.18),transparent 70%);
+}
+.ai-inner{position:relative;z-index:1}
+.ai-block h3{font-size:.9rem;font-weight:800;color:var(--teal-pale);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.ai-block p{font-size:.88rem;line-height:1.75;opacity:.88}
+.ai-block p+p{margin-top:.5rem}
+.ai-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.ai-tag{
+  background:rgba(91,163,160,.2);border:1px solid rgba(91,163,160,.4);
+  color:#aadddb;font-size:.76rem;font-weight:700;
+  padding:.2rem .7rem;border-radius:50px;
+}
+
+/* ─── WORK SAMPLES ───────────────────────────────────────── */
+#tyonäytteet{background:var(--sage)}
+.samples-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.s-card{
+  background:#fff;border-radius:22px;padding:1.75rem;
+  box-shadow:0 3px 16px rgba(0,0,0,.06);
+}
+.s-head{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:1.25rem}
+.s-ico{
+  width:46px;height:46px;border-radius:13px;
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.35rem;
+}
+.si-t{background:var(--teal-pale)}
+.si-c{background:var(--coral-pale)}
+.s-head h3{font-size:.95rem;font-weight:800;color:var(--dark);margin-bottom:.08rem}
+.s-head p{font-size:.78rem;color:var(--soft)}
+.s-list{list-style:none}
+.s-list li{
+  display:flex;gap:.5rem;align-items:flex-start;
+  font-size:.84rem;color:var(--mid);
+  padding:.42rem 0;border-bottom:1px solid var(--sage);line-height:1.45;
+}
+.s-list li:last-child{border:none}
+.s-list li::before{content:'›';color:var(--teal);font-weight:900;font-size:1.05rem;flex-shrink:0;margin-top:-1px}
+.s-stats{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.s-stat{background:var(--sage);color:var(--mid);font-size:.74rem;font-weight:800;padding:.22rem .7rem;border-radius:50px}
+
+.ctx-box{
+  background:var(--dark);color:#fff;border-radius:20px;
+  padding:1.5rem 1.75rem;margin-bottom:1.5rem;
+  font-size:.88rem;line-height:1.75;
+}
+.ctx-box p+p{margin-top:.5rem}
+.ctx-box em{color:var(--teal-pale);font-style:normal;font-weight:700}
+
+.links-box{
+  background:#fff;border-radius:20px;padding:1.6rem 1.75rem;
+  border:2px dashed var(--sage2);
+}
+.links-box h3{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:.5rem}
+.links-box p{font-size:.83rem;color:var(--soft);line-height:1.6;margin-bottom:1rem}
+.pl{display:flex;flex-wrap:wrap;gap:.5rem}
+.pl a{
+  background:var(--sage);color:var(--mid);
+  border:1.5px solid var(--rule);
+  font-size:.8rem;font-weight:700;
+  padding:.3rem .9rem;border-radius:50px;
+  text-decoration:none;transition:all .2s;
+}
+.pl a:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ─── PERSONAL ───────────────────────────────────────────── */
+#minä{background:#fff}
+.pers-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.p-card{background:var(--sage);border-radius:20px;padding:1.6rem;transition:transform .2s}
+.p-card:hover{transform:translateY(-2px)}
+.p-card h3{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.p-card p{font-size:.86rem;color:var(--mid);line-height:1.65}
+
+.p-coral{
+  background:var(--coral);color:#fff;border-radius:20px;padding:1.6rem;
+  grid-column:1/-1;
+}
+.p-coral h3{font-size:.9rem;font-weight:800;opacity:.8;margin-bottom:.85rem}
+.q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.q-item{
+  background:rgba(255,255,255,.16);border-radius:13px;
+  padding:.65rem .9rem;font-size:.83rem;font-weight:700;line-height:1.45;
+}
+
+.p-dark{background:var(--dark);color:#fff;border-radius:20px;padding:1.6rem}
+.p-dark h3{font-size:.9rem;font-weight:800;color:var(--teal-pale);margin-bottom:.5rem}
+.p-dark p{font-size:.86rem;opacity:.82;line-height:1.65}
+.disc-pill{
+  display:inline-block;margin-top:.75rem;
+  background:var(--teal);color:#fff;
+  font-size:.78rem;font-weight:800;padding:.25rem .9rem;border-radius:50px;
+}
+
+/* ─── CONTACT ────────────────────────────────────────────── */
+#yhteystiedot{background:var(--sage)}
+.c-wrap{max-width:580px;margin:0 auto;text-align:center}
+.c-wrap h2{margin-bottom:.5rem}
+.c-wrap .lead{margin-inline:auto;text-align:center}
+.c-links{display:flex;flex-direction:column;gap:.65rem;max-width:340px;margin:2rem auto 0}
+.c-link{
+  display:flex;align-items:center;gap:.8rem;
+  background:#fff;border-radius:50px;padding:.78rem 1.3rem;
+  text-decoration:none;color:var(--dark);font-weight:700;font-size:.9rem;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);transition:all .2s;
+}
+.c-link:hover{background:var(--teal);color:#fff;transform:translateX(4px)}
+.c-link .ci{
+  width:34px;height:34px;border-radius:50%;background:var(--sage);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
+}
+.c-link:hover .ci{background:rgba(255,255,255,.2)}
+.c-footer{margin-top:2.5rem;font-size:.77rem;color:var(--soft)}
+
+
+/* ─── KEHITTÄMINEN ───────────────────────────────────────── */
+#kehittäminen{background:var(--cream)}
+.dev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin-bottom:1.5rem}
+.dev-card{
+  background:#fff;border-radius:18px;padding:1.5rem;
+  border:1.5px solid var(--rule);transition:all .2s;
+}
+.dev-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.dev-card-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem}
+.dev-ico{font-size:1.4rem}
+.dev-card h3{font-size:.88rem;font-weight:800;color:var(--dark);line-height:1.3}
+.dev-card ul{list-style:none}
+.dev-card ul li{
+  font-size:.82rem;color:var(--soft);
+  padding:.3rem 0;border-bottom:1px solid var(--sage);
+  display:flex;gap:.4rem;line-height:1.45;
+}
+.dev-card ul li:last-child{border:none}
+.dev-card ul li::before{content:'·';color:var(--teal);font-weight:900;flex-shrink:0}
+/* ─── GALLERY ────────────────────────────────────────────── */
+.gallery-section{margin-top:2rem}
+.gallery-section h3{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:.4rem}
+.gallery-section p{font-size:.82rem;color:var(--soft);margin-bottom:1rem;line-height:1.6}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.gallery-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--sage);border:1.5px solid var(--rule)}
+.gallery-img img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:740px){.dev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.dev-grid{grid-template-columns:1fr}}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:740px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
+  .hero-chips,.s-stats,.pl,.ai-tags,.t-chips{justify-content:center}
+  .hero-text h1{font-size:2.4rem}
+  .photo-frame{margin:0 auto}
+  .bg3,.res3,.sk2,.samples-grid,.pers-grid,.q-grid{grid-template-columns:1fr}
+  .sk-special,.ai-block,.p-coral{grid-column:1}
+  .q-grid{grid-template-columns:1fr 1fr}
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+}
+
+/* ─── LANG TOGGLE ─────────────────────────── */
+.lang-btn{
+  background:transparent;color:var(--teal2);
+  border:2px solid var(--teal);border-radius:50px;
+  font-size:.78rem;font-weight:800;padding:.28rem .85rem;
+  cursor:pointer;letter-spacing:.04em;
+  transition:all .2s;white-space:nowrap;
+  font-family:'Nunito',sans-serif;
+}
+.lang-btn:hover{background:var(--teal);color:#fff}
+/* ─── LANG BAR ────────────────────────────── */
+.lang-bar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;
+  margin-top:1.2rem;padding:.85rem 1.25rem;
+  background:rgba(91,163,160,.06);
+  border-left:3px solid var(--teal);border-radius:0 8px 8px 0;
+}
+.lang-bar strong{font-size:.8rem;color:var(--mid);margin-right:.15rem}
+.ltag{
+  background:white;border:1.5px solid var(--teal);color:var(--teal2);
+  border-radius:50px;font-size:.78rem;font-weight:700;
+  padding:.2rem .8rem;letter-spacing:.01em;
+}
+
+/* ─── EDUCATION ──────────────────────────── */
+.edu-section{margin-top:1.4rem}
+.edu-head{margin-bottom:.6rem}
+.edu-head strong,.work-head strong{font-size:.82rem;color:var(--mid);font-family:'Nunito',sans-serif}
+.edu-list{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.7rem}
+.edu-item{display:flex;align-items:baseline;gap:.75rem}
+.edu-year,.work-year{
+  font-size:.76rem;font-weight:800;color:var(--teal2);
+  min-width:3.8rem;font-family:'Nunito',sans-serif;flex-shrink:0
+}
+.edu-deg{font-size:.88rem;color:var(--mid)}
+.edu-note{font-size:.78rem;color:var(--soft);font-style:italic;margin-top:.4rem;padding-top:.5rem;border-top:1px solid var(--rule)}
+
+/* ─── WORK EXPERIENCE ────────────────────── */
+.work-section{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+.work-head{margin-bottom:.8rem}
+.work-list{display:flex;flex-direction:column;gap:.9rem}
+.work-group{}
+.work-org{font-size:.82rem;font-weight:800;color:var(--teal2);margin-bottom:.3rem;font-family:'Nunito',sans-serif}
+.work-roles{display:flex;flex-direction:column;gap:.2rem;padding-left:.5rem;border-left:2px solid var(--sage2)}
+.work-item{display:flex;align-items:baseline;gap:.75rem;padding:.1rem 0}
+.work-year{min-width:5.5rem}
+.work-role{font-size:.85rem;color:var(--mid)}
+
+/* ─── TOOL CATEGORIES ────────────────────── */
+.tool-categories{display:flex;flex-direction:column;gap:.8rem;margin-top:.5rem}
+.tool-cat{}
+.tool-cat-label{
+  font-size:.73rem;font-weight:800;color:var(--soft);
+  text-transform:uppercase;letter-spacing:.06em;
+  display:block;margin-bottom:.35rem;font-family:'Nunito',sans-serif
+}
+.tool-cat .t-chips{gap:.35rem}
+
+
+/* ── Back-to-top button ─────────────────────────────── */
+#backToTop{
+  position:fixed;bottom:5.2rem;right:1.6rem;
+  width:2.6rem;height:2.6rem;border-radius:50%;
+  background:var(--teal);color:#fff;border:none;
+  font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.18);
+  opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .3s;
+  z-index:900;
+}
+#backToTop.visible{opacity:1;pointer-events:auto}
+#backToTop:hover{transform:translateY(-3px);background:var(--dark)}
+
+/* ── Sticky contact footer ──────────────────────────── */
+#stickyFooter{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(91,163,160,.18);
+  padding:.7rem 1.5rem;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  z-index:800;
+  transition:transform .35s ease,opacity .35s ease;
+}
+#stickyFooter.hidden{
+  transform:translateY(100%);opacity:0;pointer-events:none;
+}
+#stickyFooter .sf-cta{
+  background:var(--teal);color:#fff;border:none;
+  padding:.55rem 1.4rem;border-radius:2rem;
+  font-size:.9rem;font-weight:700;cursor:pointer;
+  text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+#stickyFooter .sf-cta:hover{background:var(--dark);transform:scale(1.03)}
+#stickyFooter .sf-note{
+  font-size:.78rem;color:var(--mid);
+}
+
+/* ─── Decorative network SVGs ───────────────────────────── */
+.deco-net{position:absolute;pointer-events:none;}
+.hero-deco{top:0;right:0;width:260px;height:220px;z-index:0;}
+#kehittäminen{position:relative;overflow:hidden;}
+#kehittäminen .container{position:relative;z-index:1;}
+.keh-deco-tl{top:0;left:0;width:130px;height:180px;z-index:0;}
+.keh-deco-br{bottom:0;right:0;width:130px;height:160px;z-index:0;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#etusivu" class="nav-name">Johanna Toppinen</a>
+  <ul class="nav-links">
+    <li><a href="#taustani"><span data-key="nav.taustani">Taustani</span></a></li>
+    <li><a href="#tulokset"><span data-key="nav.tulokset">Tulokset</span></a></li>
+    <li><a href="#osaaminen"><span data-key="nav.osaaminen">Osaaminen</span></a></li>
+    <li><a href="#kehittäminen"><span data-key="nav.kehittaminen">Kehittäminen</span></a></li>
+    <li><a href="#tyonäytteet"><span data-key="nav.tyonatteet">Työnäytteet</span></a></li>
+    <li><a href="#koulutus"><span data-key="nav.koulutus">Koulutus</span></a></li>
+    <li><a href="#tyokokemus"><span data-key="nav.tyokokemus">Työkokemus</span></a></li>
+    <li><a href="#minä"><span data-key="nav.mina">Minä</span></a></li>
+    <li><a href="#yhteystiedot"><span data-key="nav.yhteystiedot">Yhteystiedot</span></a></li>
+  </ul>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">🌐 EN</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="etusivu">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="hero-inner">
+    <div class="hero-photo-col">
+      <div class="photo-frame">
+        <img src="Johanna.png" alt="Johanna Toppinen">
+      </div>
+      <span class="badge">Open to opportunities</span>
+    </div>
+
+    <div class="hero-text">
+      <span class="hero-eyebrow">Portfolio · 2026</span>
+      <h1>Johanna<br><span>Toppinen</span></h1>
+      <p class="hero-desc" data-key="hero.desc">Kehittämisen, viestinnän ja ihmislähtöisen työn asiantuntija – sosiaalialan sydämellä, digitaalisen tekemisen käsillä.</p>
+      <div class="hero-chips">
+        <span class="chip c-teal" data-key="hero.chip1">Viestintä & kehittäminen</span>
+        <span class="chip c-coral" data-key="hero.chip2">Sosiaaliala</span>
+        <span class="chip c-sage" data-key="hero.chip3">Kouluttaminen</span>
+        <span class="chip c-dark" data-key="hero.chip4">Neurodiversiteettiosaaminen</span>
+        <span class="chip c-sage" data-key="hero.chip5">Sosiaalipsykologia</span>
+        <span class="chip c-sage" data-key="hero.chip6">Hanke- ja projektityö</span>
+      </div>
+      <a href="#yhteystiedot" class="hero-cta" data-key="hero.cta">Ota yhteyttä →</a>
+    </div>
+  </div>
+
+
+  <svg class="deco-net hero-deco" viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- backbone lines hub→hub -->
+    <line x1="180" y1="55"  x2="230" y2="110" stroke="#3d8b8a" stroke-width="1.1" opacity=".38"/>
+    <line x1="180" y1="55"  x2="120" y2="90"  stroke="#3d8b8a" stroke-width="1.1" opacity=".38"/>
+    <line x1="120" y1="90"  x2="230" y2="110" stroke="#3d8b8a" stroke-width=".9"  opacity=".28"/>
+    <line x1="120" y1="90"  x2="140" y2="170" stroke="#3d8b8a" stroke-width=".9"  opacity=".28"/>
+    <line x1="230" y1="110" x2="200" y2="185" stroke="#3d8b8a" stroke-width=".9"  opacity=".28"/>
+    <!-- spokes hub→endpoint -->
+    <line x1="180" y1="55"  x2="215" y2="18"  stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="180" y1="55"  x2="245" y2="58"  stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="230" y1="110" x2="255" y2="145" stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="120" y1="90"  x2="78"  y2="68"  stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="120" y1="90"  x2="88"  y2="128" stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="140" y1="170" x2="105" y2="200" stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="140" y1="170" x2="168" y2="210" stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <line x1="200" y1="185" x2="230" y2="215" stroke="#3d8b8a" stroke-width=".7"  opacity=".22"/>
+    <!-- hubs -->
+    <circle cx="180" cy="55"  r="5.5" fill="#26504e" opacity=".52"/>
+    <circle cx="180" cy="55"  r="9"   fill="none" stroke="#3d8b8a" stroke-width=".8" opacity=".18"/>
+    <circle cx="120" cy="90"  r="4.5" fill="#26504e" opacity=".48"/>
+    <circle cx="120" cy="90"  r="7.5" fill="none" stroke="#3d8b8a" stroke-width=".7" opacity=".15"/>
+    <circle cx="230" cy="110" r="4"   fill="#26504e" opacity=".45"/>
+    <circle cx="230" cy="110" r="7"   fill="none" stroke="#3d8b8a" stroke-width=".7" opacity=".14"/>
+    <!-- endpoints -->
+    <circle cx="215" cy="18"  r="2.2" fill="#3d8b8a" opacity=".38"/>
+    <circle cx="245" cy="58"  r="2"   fill="#3d8b8a" opacity=".32"/>
+    <circle cx="255" cy="145" r="2.2" fill="#3d8b8a" opacity=".35"/>
+    <circle cx="78"  cy="68"  r="2"   fill="#3d8b8a" opacity=".30"/>
+    <circle cx="88"  cy="128" r="2.2" fill="#3d8b8a" opacity=".32"/>
+    <circle cx="140" cy="170" r="3.5" fill="#26504e" opacity=".42"/>
+    <circle cx="105" cy="200" r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="168" cy="210" r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="200" cy="185" r="3"   fill="#26504e" opacity=".38"/>
+    <circle cx="230" cy="215" r="2"   fill="#3d8b8a" opacity=".26"/>
+  </svg>
+</section>
+
+<!-- TAUSTANI -->
+<section id="taustani">
+  <div class="container">
+    <span class="sec-label sl-teal" data-key="lbl.taustani">Taustani</span>
+    <h2 data-key="h2.taustani">Harvinainen yhdistelmä</h2>
+    <p class="lead" data-key="lead.taustani">Olen viestinnän, markkinoinnin ja ihmislähtöisen kehittämisen asiantuntija, jonka tausta yhdistää neurodiversiteettiosaamisen, sosiaalialan koulutuksen, yhteiskuntatieteen opinnot sekä käytännön kokemuksen sisällöntuotannosta, koulutusten rakentamisesta ja digitaalisista järjestelmistä.</p>
+
+    <div class="bg3">
+      <div class="bg-card t">
+        <div class="bg-card-ico">📣</div>
+        <h3 data-key="bg.viestinta.h3">Viestintä & markkinointi</h3>
+        <p data-key="bg.viestinta.p">Yli 5 vuotta monikanavaista viestintää ja markkinointia sosiaali- ja koulutusalan organisaatioissa – itsenäisesti, pienillä resursseilla.</p>
+      </div>
+      <div class="bg-card c">
+        <div class="bg-card-ico">🤝</div>
+        <h3 data-key="bg.sosiaali.h3">Sosiaalialan pohja</h3>
+        <p data-key="bg.sosiaali.p">Yli 10 vuotta lasten, nuorten ja perheiden parissa – varhaiskasvatuksesta lastensuojeluun ja neuropsykiatriseen valmennukseen.</p>
+      </div>
+      <div class="bg-card s">
+        <div class="bg-card-ico">🌱</div>
+        <h3 data-key="bg.kehittaminen.h3">Kehittäminen & koulutus</h3>
+        <p data-key="bg.kehittaminen.p">Palvelumuotoilua, projektityötä, koulutusten rakentamista ja webinaareja. Käytännönläheinen ja tavoitesuuntainen ote.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TULOKSET -->
+<section id="tulokset">
+  <div class="container">
+    <span class="sec-label sl-coral" data-key="lbl.tulokset">Tulokset</span>
+    <h2 data-key="h2.tulokset">Luvut puhuvat</h2>
+    <p class="lead" data-key="lead.tulokset">Olen rakentanut näkyvyyttä pienillä resursseilla ja ilman suuria mainosbudjetteja. Nämä tulokset syntyneet laajan työnkuvan ohessa.</p>
+
+    <div class="res3">
+      <div class="r-card">
+        <div class="r-num">~120</div>
+        <div class="r-label" data-key="res.l1">orgaanista ilmoittautumista per webinaari</div>
+        <div class="r-note" data-key="res.n1">Ammattimaisesti toteutettu kokonaisuus: ilmoittautuminen, muistutukset ja jälkimarkkinointi – kohderyhmä tavoitettiin oikein</div>
+      </div>
+      <div class="r-card rc">
+        <div class="r-num coral">60 %</div>
+        <div class="r-label" data-key="res.l2">palaavia osallistujia webinaareissa</div>
+        <div class="r-note" data-key="res.n2">n. 95 % osallistujista haluttua kohderyhmää – yleisö sitoutuu ja palaa</div>
+      </div>
+      <div class="r-card rs">
+        <div class="r-num">6 000</div>
+        <div class="r-label" data-key="res.l3">uutiskirjetilaajaa nollasta, orgaanisesti</div>
+        <div class="r-note" data-key="res.n3">Avausprosentti 25–35 % · pieni poistuma · kasvaa tasaisesti</div>
+      </div>
+      <div class="r-card">
+        <div class="r-num">17 K</div>
+        <div class="r-label" data-key="res.l4">tavoitettua tiliä yhdellä Facebook-julkaisulla</div>
+        <div class="r-note" data-key="res.n4">Tilillä alle 2 000 seuraajaa – oikea sisältö löytää kohderyhmänsä</div>
+      </div>
+      <div class="r-card rc">
+        <div class="r-num coral">21,5 K</div>
+        <div class="r-label" data-key="res.l5">katselukertaa TikTokissa</div>
+        <div class="r-note" data-key="res.n5">Tekstipohjainen julkaisu · 283 tykkäystä · 211 tallennusta · 36 jakoa</div>
+      </div>
+      <div class="r-card rs">
+        <div class="r-num">400+</div>
+        <div class="r-label" data-key="res.l6">latausta Neurodiversiteettiystävällinen&nbsp;työympäristö&nbsp;-oppaalle</div>
+        <div class="r-note" data-key="res.n6">Selkeä, kohderyhmää aidosti palveleva sisältö</div>
+      </div>
+    </div>
+
+    <div class="res-callout" data-key="res.callout">
+      Olen kasvanut ammattilaiseksi, jolle sekä <strong>ihmisymmärrys että digitaalinen tekeminen</strong> ovat luontaisia. Tulokset syntyvät, kun kohderyhmää ymmärretään oikeasti – ei vain markkinointimielessä.
+    </div>
+  </div>
+</section>
+
+<!-- OSAAMINEN -->
+<section id="osaaminen">
+  <div class="container">
+    <span class="sec-label sl-dark" data-key="lbl.osaaminen">Osaaminen</span>
+    <h2 data-key="h2.osaaminen">Mitä osaan tehdä</h2>
+    <p class="lead" data-key="lead.osaaminen">Monipuolinen kokonaisuus, jossa strateginen ajattelu, käytännön toteutus ja syvä ihmisymmärrys yhdistyvät.</p>
+
+    <div class="sk2">
+
+      <div class="sk-block">
+        <h3 data-key="sk.viestinta.h3">📣 Viestintä & sisällöntuotanto</h3>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r1"><strong>Monikanavainen some</strong> – Facebook, Instagram, TikTok, LinkedIn, YouTube, Vimeo</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r2"><strong>Sähköpostimarkkinointi</strong> – Mailchimp, automaatiot, uutiskirjeet</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r3"><strong>Verkkosivut</strong> – WordPress, sisältörakenne, SEO-perusteet</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r7"><strong>Blogit</strong> – sisältöjä ihmisistä, arjesta ja työelämästä</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r4"><strong>Visuaalinen viestintä</strong> – kuvankäsittely, AI-kuvat, taittaminen, videot</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r8"><strong>Editointi</strong> – DaVinci Resolve, webinaarit, lyhytvideot</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r5"><strong>Analytiikka</strong> – GA4, Semrush</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.viestinta.r6"><strong>Maksettu mainonta</strong> – Meta Ads, Google Ads</p></div>
+      </div>
+
+      <div class="sk-block">
+        <h3 data-key="sk.koulutus.h3">🎓 Koulutus & kehittäminen</h3>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r1"><strong>Koulutusten tuotteistaminen</strong> – webinaarit, verkkokurssit, oppimateriaalit</p></div>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r2"><strong>Asiantuntijasisältöjä</strong> ihmisyyteen ja yhteiskuntaan liittyvistä teemoista – mm. blogeja sekä <em>Nepsy Perhe PLUS</em>- ja <em>Neurodiversiteetti työelämässä</em> -verkkokurssit</p></div>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r3"><strong>Palvelumuotoilu</strong> – käyttäjänäkökulma, asiakaspolkujen rakentaminen</p></div>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r4"><strong>Fasilitointi & projektityö</strong> – hankkeet, kehittäminen, monialainen yhteistyö</p></div>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r5"><strong>Neurodiversiteettiosaaminen</strong> – neurodiversiteetin teemat arjessa ja työelämässä, ratkaisukeskeinen lähestymistapa</p></div>
+        <div class="sk-row"><div class="sk-dot c"></div><p data-key="sk.koulutus.r6"><strong>Sisäinen viestintä</strong> – intran ylläpito, materiaalien tuotanto</p></div>
+      </div>
+
+      <div class="sk-block" style="grid-column:1/-1">
+        <h3 data-key="sk.tyoelama.h3">💬 Työelämäilmiöiden tuntemus</h3>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.tyoelama.r1">Vuorovaikutus, psykologinen turvallisuus ja tiimidynamiikka</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.tyoelama.r2">Epävarmuuden ja muutostilanteiden vaikutukset yksilöön ja yhteisöön</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.tyoelama.r3">Tunteet työelämässä, palautekulttuuri, esihenkilötyö</p></div>
+        <div class="sk-row"><div class="sk-dot"></div><p data-key="sk.tyoelama.r4">Sosiaalipsykologinen pohja ihmisten ja ryhmien ymmärtämiseen</p></div>
+      </div>
+
+      <div class="sk-special">
+        <h3 data-key="sk.special.h3">⭐ Erityisosaaminen – kehittäminen, sanoittaminen ja ihmisymmärrys</h3>
+        <p data-key="sk.special.p">Kykenen sanoittamaan arkaluontoiset tai monimutkaiset aiheet selkeästi ja kunnioittavasti yleisön kielelle. Ymmärrän ilmiöitä syvemmältä kuin pelkkänä markkinointina tai viestintänä ja pystyn rakentamaan viestin, joka sekä koskettaa että informoi. Saan myös nopeasti kiinni brändin äänestä ja tuotan sisältöä, joka sopii juuri sille organisaatiolle.</p>
+        <div class="tool-categories">
+          <div class="tool-cat">
+            <span class="tool-cat-label" data-key="tool.c1">Viestintä & sisältö</span>
+            <div class="t-chips">
+              <span class="t-chip">WordPress</span><span class="t-chip">Canva</span><span class="t-chip">Mailchimp</span><span class="t-chip">Simplified</span><span class="t-chip">Meta Business Suite</span><span class="t-chip">DaVinci Resolve</span><span class="t-chip">CapCut</span><span class="t-chip">Edits</span><span class="t-chip">Vimeo</span>
+            </div>
+          </div>
+          <div class="tool-cat">
+            <span class="tool-cat-label" data-key="tool.c2">Mainonta & analytiikka</span>
+            <div class="t-chips">
+              <span class="t-chip">Meta Ads</span><span class="t-chip">Google Ads</span><span class="t-chip">Google Analytics 4</span><span class="t-chip">Semrush</span>
+            </div>
+          </div>
+          <div class="tool-cat">
+            <span class="tool-cat-label" data-key="tool.c3">Järjestelmät</span>
+            <div class="t-chips">
+              <span class="t-chip">Microsoft 365</span><span class="t-chip">CampwireX</span><span class="t-chip">Severa</span><span class="t-chip">Jira</span><span class="t-chip">Zef.fi</span>
+            </div>
+          </div>
+          <div class="tool-cat">
+            <span class="tool-cat-label" data-key="tool.c4">Tekoäly</span>
+            <div class="t-chips">
+              <span class="t-chip">ChatGPT</span><span class="t-chip">Claude</span><span class="t-chip">Copilot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-block">
+        <div class="ai-inner">
+          <h3 data-key="ai.h3">🤖 Tekoälytyökalujen hyödyntäminen</h3>
+          <p data-key="ai.p1">Hyödynnän tekoälytyökaluja aktiivisesti markkinoinnin ja viestinnän suunnittelun tukena sekä sisällöntuotannon apuna. Olen käyttänyt Copilotia, Geminiä ja eniten ChatGPT:tä käytännön työssä.</p>
+          <p data-key="ai.p2">Viimeisimpänä olen perehtynyt Clauden tarjoamiin mahdollisuuksiin ja hyödynnän sitä sekä projektinhallinnan että arjen assistenttina – mm. tämä portfolio on tuotettu sen avulla. Suhtaudun tekoälyyn uteliaan ammatillisesti: se on työkalu, joka auttaa arjessa ja työssä, mutta vastuu on aina ihmisellä.</p>
+          <div class="ai-tags">
+            <span class="ai-tag">ChatGPT</span>
+            <span class="ai-tag">Claude</span>
+            <span class="ai-tag">Copilot</span>
+            <span class="ai-tag">Gemini</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- KEHITTÄMISOSAAMINEN -->
+<section id="kehittäminen">
+  <svg class="deco-net keh-deco keh-deco-tl" viewBox="0 0 130 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="20"  y1="60"  x2="80"  y2="40"  stroke="#26504e" stroke-width="1"  opacity=".30"/>
+    <line x1="20"  y1="60"  x2="55"  y2="115" stroke="#26504e" stroke-width="1"  opacity=".30"/>
+    <line x1="80"  y1="40"  x2="55"  y2="115" stroke="#26504e" stroke-width=".8" opacity=".22"/>
+    <line x1="20"  y1="60"  x2="8"   y2="18"  stroke="#26504e" stroke-width=".7" opacity=".20"/>
+    <line x1="80"  y1="40"  x2="118" y2="28"  stroke="#26504e" stroke-width=".7" opacity=".20"/>
+    <line x1="55"  y1="115" x2="30"  y2="158" stroke="#26504e" stroke-width=".7" opacity=".18"/>
+    <line x1="55"  y1="115" x2="95"  y2="140" stroke="#26504e" stroke-width=".7" opacity=".18"/>
+    <circle cx="20"  cy="60"  r="4"   fill="#26504e" opacity=".42"/>
+    <circle cx="20"  cy="60"  r="7"   fill="none" stroke="#3d8b8a" stroke-width=".7" opacity=".15"/>
+    <circle cx="80"  cy="40"  r="3.5" fill="#26504e" opacity=".38"/>
+    <circle cx="55"  cy="115" r="3.5" fill="#26504e" opacity=".38"/>
+    <circle cx="8"   cy="18"  r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="118" cy="28"  r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="30"  cy="158" r="2"   fill="#3d8b8a" opacity=".24"/>
+    <circle cx="95"  cy="140" r="2"   fill="#3d8b8a" opacity=".24"/>
+  </svg>
+  <svg class="deco-net keh-deco keh-deco-br" viewBox="0 0 130 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="110" y1="55"  x2="55"  y2="80"  stroke="#26504e" stroke-width="1"  opacity=".30"/>
+    <line x1="110" y1="55"  x2="90"  y2="125" stroke="#26504e" stroke-width="1"  opacity=".30"/>
+    <line x1="55"  y1="80"  x2="90"  y2="125" stroke="#26504e" stroke-width=".8" opacity=".22"/>
+    <line x1="110" y1="55"  x2="125" y2="20"  stroke="#26504e" stroke-width=".7" opacity=".20"/>
+    <line x1="55"  y1="80"  x2="18"  y2="65"  stroke="#26504e" stroke-width=".7" opacity=".20"/>
+    <line x1="90"  y1="125" x2="115" y2="152" stroke="#26504e" stroke-width=".7" opacity=".18"/>
+    <line x1="90"  y1="125" x2="50"  y2="148" stroke="#26504e" stroke-width=".7" opacity=".18"/>
+    <circle cx="110" cy="55"  r="4"   fill="#26504e" opacity=".42"/>
+    <circle cx="110" cy="55"  r="7"   fill="none" stroke="#3d8b8a" stroke-width=".7" opacity=".15"/>
+    <circle cx="55"  cy="80"  r="3.5" fill="#26504e" opacity=".38"/>
+    <circle cx="90"  cy="125" r="3.5" fill="#26504e" opacity=".38"/>
+    <circle cx="125" cy="20"  r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="18"  cy="65"  r="2"   fill="#3d8b8a" opacity=".28"/>
+    <circle cx="115" cy="152" r="2"   fill="#3d8b8a" opacity=".24"/>
+    <circle cx="50"  cy="148" r="2"   fill="#3d8b8a" opacity=".24"/>
+  </svg>
+  <div class="container">
+    <span class="sec-label sl-dark" data-key="lbl.kehittaminen">Kehittämisosaaminen</span>
+    <h2 data-key="h2.kehittaminen">Kehittämistä monessa kontekstissa</h2>
+    <p class="lead" data-key="lead.kehittaminen">Olen kehittänyt palveluita, toimintakulttuuria, digitaalisia järjestelmiä ja sisältöjä läpi koko urani – eri aloilla, eri rooleista käsin.</p>
+    <div class="dev-grid">
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">🌿</span><h3 data-key="dev.1.h3">Varhaiskasvatus & osallistava kehittäminen</h3></div>
+        <ul data-key="dev.1.ul">
+          <li>Arjen toiminnan sujuvoittaminen erityistä tukea tarvitsevat lapset huomioiden</li>
+          <li>Draamakasvatusmenetelmien käyttöönotto</li>
+          <li>Kieli- ja liikuntaryhmä kielenhäiriöisille ja maahanmuuttajalapsille</li>
+          <li>Henkilökunnan koulutus neuromonimuotoisuuden teemoista</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">💻</span><h3 data-key="dev.2.h3">Digitaalinen kehittäminen</h3></div>
+        <ul data-key="dev.2.ul">
+          <li>SharePoint-ympäristö monipaikkaisen työn mahdollistamiseksi</li>
+          <li>Viestintäkanavien rakentaminen ja asiakaskirjausjärjestelmän jatkokehittäminen</li>
+          <li>Infografien ja opasvideoiden tuottaminen järjestelmien käyttöön</li>
+          <li>Intranetin rakentaminen ja ylläpito</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">🔬</span><h3 data-key="dev.3.h3">Palvelujen konseptointi</h3></div>
+        <ul data-key="dev.3.ul">
+          <li>Lyhytterapeuttisen psyykkisen tuen verkkopalvelun konseptointi</li>
+          <li>Tekniikat ja oheismateriaalit tilaaja-, toteuttaja- ja asiakasnäkökulmasta</li>
+          <li>Digitaalisen taskuvalmentajan kehittämistyö</li>
+          <li>Verkkokurssin muotoilu osallistavan kehittämisen keinoin verkkovalmennukseksi</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">🎓</span><h3 data-key="dev.4.h3">Verkkokoulutukset & pedagogiikka</h3></div>
+        <ul data-key="dev.4.ul">
+          <li>Kaksi verkkokurssia: tekninen toteutus ja osin sisällöllinen vastuu</li>
+          <li>Pedagogisen vaikuttavuuden suunnittelu ja mittaaminen</li>
+          <li>Liidipolkujen rakentaminen koulutusten ympärille</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">🌐</span><h3 data-key="dev.5.h3">Verkkosivut & sisältöstrategia</h3></div>
+        <ul data-key="dev.5.ul">
+          <li>Verkkosivujen siirto uudelle alustalle – 3 hlön tiimi</li>
+          <li>Sisältöjen kehittäminen ja toimintastrategian uudistaminen</li>
+          <li>Liidipolkujen ja -listojen rakentaminen</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-top"><span class="dev-ico">📊</span><h3 data-key="dev.6.h3">Sisäinen kehittäminen</h3></div>
+        <ul data-key="dev.6.ul">
+          <li>Sisäisen viestinnän kehittäminen useassa organisaatiossa</li>
+          <li>Asiakastyytyväisyys- ja 360-kyselyt sekä raportointi</li>
+          <li>Koulutusten pedagoginen vaikuttavuus ja sen mittaaminen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYÖNÄYTTEET -->
+<section id="tyonäytteet">
+  <div class="container">
+    <span class="sec-label sl-teal" data-key="lbl.tyonatteet">Työnäytteet</span>
+    <h2 data-key="h2.tyonatteet">Markkinointiviestinnän työtä kahdessa organisaatiossa</h2>
+    <p class="lead" data-key="lead.tyonatteet">Molemmissa organisaatioissa olen vastannut käytännön markkinoinnista ja viestinnästä. Viimeisimmän vuoden olen vastannut asioista yksin – sitä ennen tiimissä on ollut 2–3 henkilöä.</p>
+
+    <div class="samples-grid">
+      <div class="s-card">
+        <div class="s-head">
+          <div class="s-ico si-t">🏠</div>
+          <div>
+            <h3>Elämän Huoltamo Oy</h3>
+            <p data-key="s.elama.sub">Lastensuojelu, terapia & perheiden tukipalvelut</p>
+          </div>
+        </div>
+        <ul class="s-list" data-key="s.elama.ul">
+          <li>Monikanavainen someviestintä – Facebook, Instagram, LinkedIn, TikTok</li>
+          <li>TikTok-julkaisu: 21 000+ katselukertaa, 283 tykkäystä, 211 tallennusta</li>
+          <li>Uutiskirjeet kuukausittain 2 000 tilaajalle</li>
+          <li>Google Ads ja Meta-mainonta vaatimattomilla budjeteilla</li>
+          <li>Koulutusten tuotteistaminen ja verkkokurssisisällöt</li>
+          <li>Mainokset, hinnastot, koulutusmateriaalit</li>
+          <li>Verkkosivusisällöt ja palvelumuotoilu</li>
+        </ul>
+        <div class="s-stats">
+          <span class="s-stat" data-key="s.elama.stat1">📊 21K+ TikTok-katselua</span>
+          <span class="s-stat" data-key="s.elama.stat2">📧 2 000 tilaajaa</span>
+        </div>
+      </div>
+
+      <div class="s-card">
+        <div class="s-head">
+          <div class="s-ico si-c">🎓</div>
+          <div>
+            <h3>Toisintekijät Oy</h3>
+            <p data-key="s.toisi.sub">Johtaminen, vuorovaikutus & työkyky</p>
+          </div>
+        </div>
+        <ul class="s-list" data-key="s.toisi.ul">
+          <li>LinkedIn, Instagram, Facebook – kasvava seuraajakunta</li>
+          <li>Webinaarimarkkinointi ja webinaarien käytännön toteutus</li>
+          <li>Lyhytvideot ja webinaarien editointi</li>
+          <li>Esitteet, messuseinä, oppaat, asiakasreferenssit</li>
+          <li>Uutiskirjeet kuukausittain 4 000 tilaajalle</li>
+          <li>Toisintekijät Akatemia: tekninen toteutus ja verkkokurssisisällöt</li>
+          <li>Digitaalisen taskuvalmentajan kehittämistyössä mukana</li>
+          <li>Asiakastyytyväisyys- ja 360-kyselyt sekä raporttien tuottaminen</li>
+        </ul>
+        <div class="s-stats">
+          <span class="s-stat" data-key="s.toisi.stat1">🎓 ~120 ilm./webinaari</span>
+          <span class="s-stat" data-key="s.toisi.stat2">📄 Opas: 400+ latausta</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctx-box">
+      <p data-key="ctx.p1"><em>Monipuolinen ja muuttuva työnkuva:</em> työnkuva on liukunut asiakastyöstä ja esihenkilötyöstä kehittämiseen, IT-tukeen ja markkinointiviestintään. Myynnin ja markkinoinnin tulokset syntyneet muun työnkuvan ohessa.</p>
+      <p data-key="ctx.p2">Webinaarien osallistujista <em>n. 95 % oli haluttua kohderyhmää</em> – ammattimaisesti toteutettu kokonaisuus tavoittaa oikeat ihmiset.</p>
+    </div>
+
+    <div class="links-box">
+      <h3 data-key="links.h3">📎 Julkiset kanavat – osa sisällöistä minun tekemääni</h3>
+      <p data-key="links.p">Alla linkit kanaviin, joiden sisällöistä olen ollut vastaamassa – lisää esimerkkejä ja työnäytteitä esittelen mielelläni tapaamisen yhteydessä.</p>
+      <div class="pl">
+        <a href="https://www.instagram.com/elaman_huoltamo/" target="_blank">📷 IG · Elämän Huoltamo</a>
+        <a href="https://www.tiktok.com/@elamanhuoltamo" target="_blank">🎵 TikTok · Elämän Huoltamo</a>
+        <a href="https://www.instagram.com/toisintekijat/" target="_blank">📷 IG · Toisintekijät</a>
+        <a href="https://www.linkedin.com/company/toisintekijat/" target="_blank">💼 LinkedIn · Toisintekijät</a>
+        <a href="https://www.toisintekijat.fi" target="_blank">🌐 toisintekijat.fi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- KOULUTUS -->
+<section id="koulutus">
+  <div class="container">
+    <span class="sec-label sl-teal" data-key="lbl.koulutus">Koulutus</span>
+    <h2 data-key="h2.koulutus">Oppiminen ei lopu</h2>
+
+    <div class="edu-section">
+      <div class="edu-head"><strong data-key="edu.label">Koulutus:</strong></div>
+      <div class="edu-list">
+        <div class="edu-item"><span class="edu-year">2025–</span><span class="edu-deg" data-key="edu.d1">Sosiaalipsykologia, aineopinnot <em>(kesken)</em></span></div>
+        <div class="edu-item"><span class="edu-year">2024</span><span class="edu-deg" data-key="edu.d2">Yhteiskuntatieteet, perusopinnot</span></div>
+        <div class="edu-item"><span class="edu-year">2020</span><span class="edu-deg" data-key="edu.d3">Neuropsykiatrinen valmentaja – ratkaisukeskeinen, eläinavusteinen</span></div>
+        <div class="edu-item"><span class="edu-year">2018</span><span class="edu-deg" data-key="edu.d4">Sosionomi (AMK)</span></div>
+        <div class="edu-item"><span class="edu-year">2011</span><span class="edu-deg" data-key="edu.d7">Myynnin ja markkinoinnin ammattitutkinto (AT)</span></div>
+        <div class="edu-item"><span class="edu-year">2001</span><span class="edu-deg" data-key="edu.d5">Lähihoitaja</span></div>
+        <div class="edu-item"><span class="edu-year">1998</span><span class="edu-deg" data-key="edu.d6">Ylioppilas</span></div>
+      </div>
+      <p class="edu-note" data-key="edu.note">Lisäkoulutuksia markkinoinnin, viestinnän, tekoälyn käytön ja vuorovaikutuksen alueilla.</p>
+    </div>
+
+    <div class="lang-bar">
+      <strong data-key="lang.label">Työkielet:</strong>
+      <span class="ltag" data-key="lang.fi">🇫🇮 Suomi – äidinkieli</span>
+      <span class="ltag" data-key="lang.en">🇬🇧 Englanti – erinomainen</span>
+      <span class="ltag" data-key="lang.sv">🇸🇪 Ruotsi – tyydyttävä</span>
+    </div>
+  </div>
+</section>
+
+<!-- TYÖKOKEMUS -->
+<section id="tyokokemus">
+  <div class="container">
+    <span class="sec-label sl-coral" data-key="lbl.tyokokemus">Työkokemus</span>
+    <h2 data-key="h2.tyokokemus">Monipuolinen ura</h2>
+    <div class="work-list">
+        <div class="work-group">
+          <div class="work-org" data-key="work.org1">Toisintekijät Oy / Elämän Huoltamo Oy</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2025–</span><span class="work-role" data-key="work.r1">Markkinointi- ja viestintäpäällikkö</span></div>
+            <div class="work-item"><span class="work-year">2024–2025</span><span class="work-role" data-key="work.r2">Projektikoordinaattori</span></div>
+            <div class="work-item"><span class="work-year">2021–2024</span><span class="work-role" data-key="work.r3">Kehityskoordinaattori</span></div>
+          </div>
+        </div>
+        <div class="work-group">
+          <div class="work-org" data-key="work.org2">Elämän Huoltamo Oy</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2020–2021</span><span class="work-role" data-key="work.r4">Sosiaalipalveluiden koordinaattori</span></div>
+            <div class="work-item"><span class="work-year">2019–2021</span><span class="work-role" data-key="work.r5">Lastensuojelun avopalveluiden työntekijä</span></div>
+          </div>
+        </div>
+        <div class="work-group">
+          <div class="work-org" data-key="work.org3">Kehitysvammaisten Palvelusäätiö</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2018–2019</span><span class="work-role" data-key="work.r6">Kokemuskouluttaja</span></div>
+          </div>
+        </div>
+        <div class="work-group">
+          <div class="work-org" data-key="work.org4">Harjulan Setlementti ry</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2011–2015</span><span class="work-role" data-key="work.r7">Lastenhoitaja</span></div>
+          </div>
+        </div>
+        <div class="work-group">
+          <div class="work-org" data-key="work.org6">Kultajousi Oy</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2008–2011</span><span class="work-role" data-key="work.r9">Myyjä / Myymäläpäällikkö</span></div>
+          </div>
+        </div>
+        <div class="work-group">
+          <div class="work-org" data-key="work.org5">Lahden kaupunki</div>
+          <div class="work-roles">
+            <div class="work-item"><span class="work-year">2001–2009</span><span class="work-role" data-key="work.r8">Päivähoitaja</span></div>
+          </div>
+        </div>
+    </div>
+    <p class="edu-note work-note" data-key="work.note">Sosionomityöharjoittelut päihde- ja mielenterveyskuntoutujien palveluissa, työhönvalmennuksessa, vammaistyössä, sosiaalisessa kuntoutuksessa ja lastensuojelun perhetyössä. Lisäksi erilaisia kehittämiseen liittyviä projektitöitä.</p>
+  </div>
+</section>
+<!-- MINÄ HENKILÖNÄ -->
+<section id="minä">
+  <div class="container">
+    <span class="sec-label sl-coral" data-key="lbl.mina">Minä henkilönä</span>
+    <h2 data-key="h2.mina">Kuka Johanna on?</h2>
+    <p class="lead" data-key="lead.mina">Äiti, täti, rakas, ystävä, koiran omistaja, utelias ihmettelijä, kupliva innostuja, iloinen höpöttelijä ja syvällinen pohtija.</p>
+
+    <div class="pers-grid">
+      <div class="p-card">
+        <h3 data-key="p.luova.h3">🎨 Luova työ + data</h3>
+        <p data-key="p.luova.p">Luova työ on inspiroivaa ja data kertoo, miten siinä onnistuttiin. Pidän yhtä paljon ideoinnista kuin siitä, että katson analytiikasta mikä toimii – ja teen lisää sitä.</p>
+      </div>
+      <div class="p-card">
+        <h3 data-key="p.oppiminen.h3">📚 Oppimisen ilo</h3>
+        <p data-key="p.oppiminen.p">Minulla on aina jokin uusi asia meneillään. Viimeisimpänä tekoälyn hyödyntäminen työssä ja arjessa. Sitä ennen kohteena oli kutominen. Työn ohessa opiskelen yhteiskuntatieteitä Tampereen avoimessa yliopistossa ja olen kiinnostunut erityisesti sosiaalipsykologisesta näkökulmasta.</p>
+      </div>
+      <div class="p-card">
+        <h3 data-key="p.alma.h3">🐾 Palautumisen keinot</h3>
+        <p data-key="p.alma.p">Ilahduttavin hyvinvoinnin tukijani on 8-vuotias Alma, entinen nepsyvalmennuksen avustajakoira, nykyinen virallinen etätyön tukikoira. Muita palautumiskeinojani ovat metsälenkit, kuntosali, hiihto, pyöräily ja laulaminen.</p>
+      </div>
+      <div class="p-dark">
+        <h3 data-key="p.disc.h3">DiSC-työtyylianalyysi</h3>
+        <p data-key="p.disc.p">Prioriteetteina yhteistyö, tuki ja innostuneisuus – ja toimintasuuntautunut, mikä ei ole tyypillistä Si-tyylille. Toimin hyvin itsenäisesti ja pidän tärkeänä hyvää tiimihenkeä tuoden siihen oman panokseni.</p>
+        <span class="disc-pill" data-key="p.disc.pill">Si-tyyli + toimintaorientoitunut</span>
+      </div>
+
+      <div class="p-coral">
+        <h3 data-key="p.kollegat.h3">Mitä työkaverit sanovat? 🥰</h3>
+        <div class="q-grid">
+          <div class="q-item" data-key="q.i1">"Ilmapiirin piristäjä ja ilon tuoja"</div>
+          <div class="q-item" data-key="q.i2">"Himmelihanna – rakentaa kaikenlaisia digitaalisia systeemejä"</div>
+          <div class="q-item" data-key="q.i3">"Rohkea ja luotettava" – Kehujen keskiviikon palaute</div>
+          <div class="q-item" data-key="q.i4">"Aikaansaava ja monipuolinen – pöydälle voi pudottaa monenlaisia tehtäviä"</div>
+          <div class="q-item" data-key="q.i5">"Hyvä ideointikumppani – innostuu ja tuo myös kriittistä näkökulmaa"</div>
+          <div class="q-item" data-key="q.i6">"Myöntää jos ei osaa jotakin – ja lisää perään, että opettelee sen"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YHTEYSTIEDOT -->
+<section id="yhteystiedot">
+  <div class="container">
+    <div class="c-wrap">
+      <span class="sec-label sl-teal" data-key="lbl.yhteystiedot">Yhteystiedot</span>
+      <h2 data-key="h2.yhteystiedot">Kiinnostuitko? Jutellaan!</h2>
+      <p class="lead" data-key="lead.yhteystiedot">Etsin etä- tai hybridipainotteista tehtävää viestinnän, kehittämisen, hanke- tai projektityön tai sisäisen kehittämisen parissa. Ota rohkeasti yhteyttä.</p>
+
+      <div class="c-links">
+        <a href="mailto:johanna.toppinen@gmail.com" class="c-link">
+          <div class="ci">✉️</div>
+          johanna.toppinen@gmail.com
+        </a>
+        <a href="tel:+358456725858" class="c-link">
+          <div class="ci">📞</div>
+          045 672 5858
+        </a>
+        <a href="https://www.linkedin.com/in/johanna-toppinen-a07b32157" target="_blank" class="c-link">
+          <div class="ci">💼</div>
+          LinkedIn
+        </a>
+      </div>
+
+      <p class="c-footer" data-key="c.footer">Etä- tai hybridityö · 2026</p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+const T = {
+  fi: {"nav.taustani": "Taustani", "nav.tulokset": "Tulokset", "nav.osaaminen": "Osaaminen", "nav.kehittaminen": "Kehittäminen", "nav.tyonatteet": "Työnäytteet", "nav.mina": "Minä", "nav.yhteystiedot": "Yhteystiedot", "hero.desc": "Kehittämisen, viestinnän ja ihmislähtöisen työn asiantuntija – sosiaalialan sydämellä, digitaalisen tekemisen käsillä.", "hero.chip1": "Viestintä & kehittäminen", "hero.chip2": "Sosiaaliala", "hero.chip3": "Kouluttaminen", "hero.chip4": "Neurodiversiteettiosaaminen", "hero.chip5": "Sosiaalipsykologia", "hero.chip6": "Hanke- ja projektityö", "hero.cta": "Ota yhteyttä →", "lbl.taustani": "Taustani", "lbl.tulokset": "Tulokset", "lbl.osaaminen": "Osaaminen", "lbl.kehittaminen": "Kehittämisosaaminen", "lbl.tyonatteet": "Työnäytteet", "lbl.mina": "Minä henkilönä", "lbl.yhteystiedot": "Yhteystiedot", "h2.taustani": "Harvinainen yhdistelmä", "h2.tulokset": "Luvut puhuvat", "h2.osaaminen": "Mitä osaan tehdä", "h2.kehittaminen": "Kehittämistä monessa kontekstissa", "h2.tyonatteet": "Markkinointiviestinnän työtä kahdessa organisaatiossa", "h2.mina": "Kuka Johanna on?", "h2.yhteystiedot": "Kiinnostuitko? Jutellaan!", "lead.taustani": "Olen viestinnän, markkinoinnin ja ihmislähtöisen kehittämisen asiantuntija, jonka tausta yhdistää neurodiversiteettiosaamisen, sosiaalialan koulutuksen, yhteiskuntatieteen opinnot sekä käytännön kokemuksen sisällöntuotannosta, koulutusten rakentamisesta ja digitaalisista järjestelmistä.", "lead.tulokset": "Olen rakentanut näkyvyyttä pienillä resursseilla ja ilman suuria mainosbudjetteja. Nämä tulokset syntyneet laajan työnkuvan ohessa.", "lead.osaaminen": "Monipuolinen kokonaisuus, jossa strateginen ajattelu, käytännön toteutus ja syvä ihmisymmärrys yhdistyvät.", "lead.kehittaminen": "Olen kehittänyt palveluita, toimintakulttuuria, digitaalisia järjestelmiä ja sisältöjä läpi koko urani – eri aloilla, eri rooleista käsin.", "lead.tyonatteet": "Molemmissa organisaatioissa olen vastannut käytännön markkinoinnista ja viestinnästä. Viimeisimmän vuoden olen vastannut asioista yksin – sitä ennen tiimissä on ollut 2–3 henkilöä.", "lead.mina": "Äiti, täti, rakas, ystävä, koiran omistaja, utelias ihmettelijä, kupliva innostuja, iloinen höpöttelijä ja syvällinen pohtija.", "lead.yhteystiedot": "Etsin etä- tai hybridipainotteista tehtävää viestinnän, kehittämisen, hanke- tai projektityön tai sisäisen kehittämisen parissa. Ota rohkeasti yhteyttä.", "bg.viestinta.h3": "Viestintä & markkinointi", "bg.viestinta.p": "Yli 5 vuotta monikanavaista viestintää ja markkinointia sosiaali- ja koulutusalan organisaatioissa – itsenäisesti, pienillä resursseilla.", "bg.sosiaali.h3": "Sosiaalialan pohja", "bg.sosiaali.p": "Yli 10 vuotta lasten, nuorten ja perheiden parissa – varhaiskasvatuksesta lastensuojeluun ja neuropsykiatriseen valmennukseen.", "bg.kehittaminen.h3": "Kehittäminen & koulutus", "bg.kehittaminen.p": "Palvelumuotoilua, projektityötä, koulutusten rakentamista ja webinaareja. Käytännönläheinen ja tavoitesuuntainen ote.", "edu.label": "Koulutus:", "edu.d1": "Sosiaalipsykologia, aineopinnot <em>(kesken)</em>", "edu.d2": "Yhteiskuntatieteet, perusopinnot", "edu.d3": "Neuropsykiatrinen valmentaja – ratkaisukeskeinen, eläinavusteinen", "edu.d4": "Sosionomi (AMK)", "edu.d5": "Lähihoitaja", "edu.d6": "Ylioppilas", "edu.d7": "Myynnin ja markkinoinnin ammattitutkinto (AT)", "edu.note": "Lisäkoulutuksia markkinoinnin, viestinnän, tekoälyn käytön ja vuorovaikutuksen alueilla.", "lang.label": "Työkielet:", "lang.fi": "🇫🇮 Suomi – äidinkieli", "lang.en": "🇬🇧 Englanti – erinomainen", "lang.sv": "🇸🇪 Ruotsi – tyydyttävä", "work.label": "Työkokemus:", "work.org1": "Toisintekijät Oy / Elämän Huoltamo Oy", "work.r1": "Markkinointi- ja viestintäpäällikkö", "work.r2": "Projektikoordinaattori", "work.r3": "Kehityskoordinaattori", "work.org2": "Elämän Huoltamo Oy", "work.r4": "Sosiaalipalveluiden koordinaattori", "work.r5": "Lastensuojelun avopalveluiden työntekijä", "work.org3": "Kehitysvammaisten Palvelusäätiö", "work.r6": "Kokemuskouluttaja", "work.org4": "Harjulan Setlementti ry", "work.r7": "Lastenhoitaja", "work.org5": "Lahden kaupunki", "work.r8": "Päivähoitaja", "work.org6": "Kultajousi Oy", "work.r9": "Myyjä / Myymäläpäällikkö", "work.note": "Sosionomityöharjoittelut päihde- ja mielenterveyskuntoutujien palveluissa, työhönvalmennuksessa, vammaistyössä, sosiaalisessa kuntoutuksessa ja lastensuojelun perhetyössä. Lisäksi erilaisia kehittämiseen liittyviä projektitöitä.", "res.l1": "orgaanista ilmoittautumista per webinaari", "res.l2": "palaavia osallistujia webinaareissa", "res.l3": "uutiskirjetilaajaa nollasta, orgaanisesti", "res.l4": "tavoitettua tiliä yhdellä Facebook-julkaisulla", "res.l5": "katselukertaa TikTokissa", "res.l6": "latausta Neurodiversiteettiystävällinen työympäristö -oppaalle", "res.n1": "Ammattimaisesti toteutettu kokonaisuus: ilmoittautuminen, muistutukset ja jälkimarkkinointi – kohderyhmä tavoitettiin oikein", "res.n2": "n. 95 % osallistujista haluttua kohderyhmää – yleisö sitoutuu ja palaa", "res.n3": "Avausprosentti 25–35 % · pieni poistuma · kasvaa tasaisesti", "res.n4": "Tilillä alle 2 000 seuraajaa – oikea sisältö löytää kohderyhmänsä", "res.n5": "Tekstipohjainen julkaisu · 283 tykkäystä · 211 tallennusta · 36 jakoa", "res.n6": "Selkeä, kohderyhmää aidosti palveleva sisältö", "res.callout": "Olen kasvanut ammattilaiseksi, jolle sekä <strong>ihmisymmärrys että digitaalinen tekeminen</strong> ovat luontaisia. Tulokset syntyvät, kun kohderyhmää ymmärretään oikeasti – ei vain markkinointimielessä.", "sk.viestinta.h3": "📣 Viestintä & sisällöntuotanto", "sk.viestinta.r1": "<strong>Monikanavainen some</strong> – Facebook, Instagram, TikTok, LinkedIn, YouTube, Vimeo", "sk.viestinta.r2": "<strong>Sähköpostimarkkinointi</strong> – Mailchimp, automaatiot, uutiskirjeet", "sk.viestinta.r3": "<strong>Verkkosivut</strong> – WordPress, sisältörakenne, SEO-perusteet", "sk.viestinta.r7": "<strong>Blogit</strong> – sisältöjä ihmisistä, arjesta ja työelämästä", "sk.viestinta.r4": "<strong>Visuaalinen viestintä</strong> – kuvankäsittely, AI-kuvat, taittaminen, videot", "sk.viestinta.r8": "<strong>Editointi</strong> – DaVinci Resolve, webinaarit, lyhytvideot", "sk.viestinta.r5": "<strong>Analytiikka</strong> – GA4, Semrush", "sk.viestinta.r6": "<strong>Maksettu mainonta</strong> – Meta Ads, Google Ads", "sk.koulutus.h3": "🎓 Koulutus & kehittäminen", "sk.koulutus.r1": "<strong>Koulutusten tuotteistaminen</strong> – webinaarit, verkkokurssit, oppimateriaalit", "sk.koulutus.r2": "<strong>Asiantuntijasisältöjä</strong> ihmisyyteen ja yhteiskuntaan liittyvistä teemoista – mm. blogeja sekä <em>Nepsy Perhe PLUS</em>- ja <em>Neurodiversiteetti työelämässä</em> -verkkokurssit", "sk.koulutus.r3": "<strong>Palvelumuotoilu</strong> – käyttäjänäkökulma, asiakaspolkujen rakentaminen", "sk.koulutus.r4": "<strong>Fasilitointi & projektityö</strong> – hankkeet, kehittäminen, monialainen yhteistyö", "sk.koulutus.r5": "<strong>Neurodiversiteettiosaaminen</strong> – neurodiversiteetin teemat arjessa ja työelämässä, ratkaisukeskeinen lähestymistapa", "sk.koulutus.r6": "<strong>Sisäinen viestintä</strong> – intran ylläpito, materiaalien tuotanto", "sk.tyoelama.h3": "💬 Työelämäilmiöiden tuntemus", "sk.tyoelama.r1": "Vuorovaikutus, psykologinen turvallisuus ja tiimidynamiikka", "sk.tyoelama.r2": "Epävarmuuden ja muutostilanteiden vaikutukset yksilöön ja yhteisöön", "sk.tyoelama.r3": "Tunteet työelämässä, palautekulttuuri, esihenkilötyö", "sk.tyoelama.r4": "Sosiaalipsykologinen pohja ihmisten ja ryhmien ymmärtämiseen", "sk.special.h3": "⭐ Erityisosaaminen – kehittäminen, sanoittaminen ja ihmisymmärrys", "sk.special.p": "Kykenen sanoittamaan arkaluontoiset tai monimutkaiset aiheet selkeästi ja kunnioittavasti yleisön kielelle. Ymmärrän ilmiöitä syvemmältä kuin pelkkänä markkinointina tai viestintänä ja pystyn rakentamaan viestin, joka sekä koskettaa että informoi. Saan myös nopeasti kiinni brändin äänestä ja tuotan sisältöä, joka sopii juuri sille organisaatiolle.", "ai.h3": "🤖 Tekoälytyökalujen hyödyntäminen", "ai.p1": "Hyödynnän tekoälytyökaluja aktiivisesti markkinoinnin ja viestinnän suunnittelun tukena sekä sisällöntuotannon apuna. Olen käyttänyt Copilotia, Geminiä ja eniten ChatGPT:tä käytännön työssä.", "ai.p2": "Viimeisimpänä olen perehtynyt Clauden tarjoamiin mahdollisuuksiin ja hyödynnän sitä sekä projektinhallinnan että arjen assistenttina – mm. tämä portfolio on tuotettu sen avulla. Suhtaudun tekoälyyn uteliaan ammatillisesti: se on työkalu, joka auttaa arjessa ja työssä, mutta vastuu on aina ihmisellä.", "dev.1.h3": "Varhaiskasvatus & osallistava kehittäminen", "dev.1.ul": "<li>Arjen toiminnan sujuvoittaminen erityistä tukea tarvitsevat lapset huomioiden</li><li>Draamakasvatusmenetelmien käyttöönotto</li><li>Kieli- ja liikuntaryhmä kielenhäiriöisille ja maahanmuuttajalapsille</li><li>Henkilökunnan koulutus neuromonimuotoisuuden teemoista</li>", "dev.2.h3": "Digitaalinen kehittäminen", "dev.2.ul": "<li>SharePoint-ympäristö monipaikkaisen työn mahdollistamiseksi</li><li>Viestintäkanavien rakentaminen ja asiakaskirjausjärjestelmän jatkokehittäminen</li><li>Infografien ja opasvideoiden tuottaminen järjestelmien käyttöön</li><li>Intranetin rakentaminen ja ylläpito</li>", "dev.3.h3": "Palvelujen konseptointi", "dev.3.ul": "<li>Lyhytterapeuttisen psyykkisen tuen verkkopalvelun konseptointi</li><li>Tekniikat ja oheismateriaalit tilaaja-, toteuttaja- ja asiakasnäkökulmasta</li><li>Digitaalisen taskuvalmentajan kehittämistyö</li><li>Verkkokurssin muotoilu osallistavan kehittämisen keinoin verkkovalmennukseksi</li>", "dev.4.h3": "Verkkokoulutukset & pedagogiikka", "dev.4.ul": "<li>Kaksi verkkokurssia: tekninen toteutus ja osin sisällöllinen vastuu</li><li>Pedagogisen vaikuttavuuden suunnittelu ja mittaaminen</li><li>Liidipolkujen rakentaminen koulutusten ympärille</li>", "dev.5.h3": "Verkkosivut & sisältöstrategia", "dev.5.ul": "<li>Verkkosivujen siirto uudelle alustalle – 3 hlön tiimi</li><li>Sisältöjen kehittäminen ja toimintastrategian uudistaminen</li><li>Liidipolkujen ja -listojen rakentaminen</li>", "dev.6.h3": "Sisäinen kehittäminen", "dev.6.ul": "<li>Sisäisen viestinnän kehittäminen useassa organisaatiossa</li><li>Asiakastyytyväisyys- ja 360-kyselyt sekä raportointi</li><li>Koulutusten pedagoginen vaikuttavuus ja sen mittaaminen</li>", "s.elama.sub": "Lastensuojelu, terapia & perheiden tukipalvelut", "s.elama.ul": "<li>Monikanavainen someviestintä – Facebook, Instagram, LinkedIn, TikTok</li><li>TikTok-julkaisu: 21 000+ katselukertaa, 283 tykkäystä, 211 tallennusta</li><li>Uutiskirjeet kuukausittain 2 000 tilaajalle</li><li>Google Ads ja Meta-mainonta vaatimattomilla budjeteilla</li><li>Koulutusten tuotteistaminen ja verkkokurssisisällöt</li><li>Mainokset, hinnastot, koulutusmateriaalit</li><li>Verkkosivusisällöt ja palvelumuotoilu</li>", "s.elama.stat1": "📊 21K+ TikTok-katselua", "s.elama.stat2": "📧 2 000 tilaajaa", "s.toisi.sub": "Johtaminen, vuorovaikutus & työkyky", "s.toisi.ul": "<li>LinkedIn, Instagram, Facebook – kasvava seuraajakunta</li><li>Webinaarimarkkinointi ja webinaarien käytännön toteutus</li><li>Lyhytvideot ja webinaarien editointi</li><li>Esitteet, messuseinä, oppaat, asiakasreferenssit</li><li>Uutiskirjeet kuukausittain 4 000 tilaajalle</li><li>Toisintekijät Akatemia: tekninen toteutus ja verkkokurssisisällöt</li><li>Digitaalisen taskuvalmentajan kehittämistyössä mukana</li><li>Asiakastyytyväisyys- ja 360-kyselyt sekä raporttien tuottaminen</li>", "s.toisi.stat1": "🎓 ~120 ilm./webinaari", "s.toisi.stat2": "📄 Opas: 400+ latausta", "ctx.p1": "<em>Monipuolinen ja muuttuva työnkuva:</em> työnkuva on liukunut asiakastyöstä ja esihenkilötyöstä kehittämiseen, IT-tukeen ja markkinointiviestintään. Myynnin ja markkinoinnin tulokset syntyneet muun työnkuvan ohessa.", "ctx.p2": "Webinaarien osallistujista <em>n. 95 % oli haluttua kohderyhmää</em> – ammattimaisesti toteutettu kokonaisuus tavoittaa oikeat ihmiset.", "links.h3": "📎 Julkiset kanavat – osa sisällöistä minun tekemääni", "links.p": "Alla linkit kanaviin, joiden sisällöistä olen ollut vastaamassa – lisää esimerkkejä ja työnäytteitä esittelen mielelläni tapaamisen yhteydessä.", "p.luova.h3": "🎨 Luova työ + data", "p.luova.p": "Luova työ on inspiroivaa ja data kertoo, miten siinä onnistuttiin. Pidän yhtä paljon ideoinnista kuin siitä, että katson analytiikasta mikä toimii – ja teen lisää sitä.", "p.oppiminen.h3": "📚 Oppimisen ilo", "p.oppiminen.p": "Minulla on aina jokin uusi asia meneillään. Viimeisimpänä tekoälyn hyödyntäminen työssä ja arjessa. Sitä ennen kohteena oli kutominen. Työn ohessa opiskelen yhteiskuntatieteitä Tampereen avoimessa yliopistossa ja olen kiinnostunut erityisesti sosiaalipsykologisesta näkökulmasta.", "p.alma.h3": "🐾 Palautumisen keinot", "p.alma.p": "Ilahduttavin hyvinvoinnin tukijani on 8-vuotias Alma, entinen nepsyvalmennuksen avustajakoira, nykyinen virallinen etätyön tukikoira. Muita palautumiskeinojani ovat metsälenkit, kuntosali, hiihto, pyöräily ja laulaminen.", "p.disc.h3": "DiSC-työtyylianalyysi", "p.disc.p": "Prioriteetteina yhteistyö, tuki ja innostuneisuus – ja toimintasuuntautunut, mikä ei ole tyypillistä Si-tyylille. Toimin hyvin itsenäisesti ja pidän tärkeänä hyvää tiimihenkeä tuoden siihen oman panokseni.", "p.disc.pill": "Si-tyyli + toimintaorientoitunut", "p.kollegat.h3": "Mitä työkaverit sanovat? 🥰", "q.i1": "\"Ilmapiirin piristäjä ja ilon tuoja\"", "q.i2": "\"Himmelihanna – rakentaa kaikenlaisia digitaalisia systeemejä\"", "q.i3": "\"Rohkea ja luotettava\" – Kehujen keskiviikon palaute", "q.i4": "\"Aikaansaava ja monipuolinen – pöydälle voi pudottaa monenlaisia tehtäviä\"", "q.i5": "\"Hyvä ideointikumppani – innostuu ja tuo myös kriittistä näkökulmaa\"", "q.i6": "\"Myöntää jos ei osaa jotakin – ja lisää perään, että opettelee sen\"", "c.footer": "Etä- tai hybridityö · 2026", "footer.note": "Avoin uusille mahdollisuuksille", "footer.cta": "Ota yhteyttä", "tool.c1": "Viestintä & sisältö", "tool.c2": "Mainonta & analytiikka", "tool.c3": "Järjestelmät", "tool.c4": "Tekoäly", "nav.koulutus": "Koulutus", "nav.tyokokemus": "Työkokemus", "lbl.koulutus": "Koulutus", "lbl.tyokokemus": "Työkokemus", "h2.koulutus": "Oppiminen ei lopu", "h2.tyokokemus": "Monipuolinen ura"},
+  en: {"nav.taustani": "Background", "nav.tulokset": "Results", "nav.osaaminen": "Skills", "nav.kehittaminen": "Development", "nav.tyonatteet": "Work samples", "nav.mina": "About me", "nav.yhteystiedot": "Contact", "hero.desc": "Expert in development, communications & human-centred work – with a social work heart and digital hands.", "hero.chip1": "Communications & development", "hero.chip2": "Social work", "hero.chip3": "Training", "hero.chip4": "Neurodiversity", "hero.chip5": "Social psychology", "hero.chip6": "Project work", "hero.cta": "Get in touch →", "lbl.taustani": "Background", "lbl.tulokset": "Results", "lbl.osaaminen": "Skills", "lbl.kehittaminen": "Development", "lbl.tyonatteet": "Work samples", "lbl.mina": "About me", "lbl.yhteystiedot": "Contact", "h2.taustani": "A rare combination", "h2.tulokset": "The numbers speak", "h2.osaaminen": "What I can do", "h2.kehittaminen": "Development across contexts", "h2.tyonatteet": "Marketing communications work in two organisations", "h2.mina": "Who is Johanna?", "h2.yhteystiedot": "Interested? Let's talk!", "lead.taustani": "Expert in communications, marketing and human-centred development, with a background combining neurodiversity expertise, social work education, social science studies, and hands-on experience in content creation, course development and digital systems.", "lead.tulokset": "I have built visibility with small resources and without large advertising budgets. These results were achieved alongside a wide-ranging role.", "lead.osaaminen": "A versatile skill set combining strategic thinking, hands-on execution and deep human understanding.", "lead.kehittaminen": "I have developed services, organisational culture, digital systems and content throughout my career — across different sectors and from different roles.", "lead.tyonatteet": "In both organisations I have been responsible for practical marketing and communications. For the past year I have managed this single-handedly — previously the team had 2–3 people.", "lead.mina": "Mother, aunt, partner, friend, dog owner, curious wonderer, bubbly enthusiast, cheerful chatterbox and deep thinker.", "lead.yhteystiedot": "I am looking for a remote or hybrid role in communications, development, project work or internal development. Feel free to reach out.", "bg.viestinta.h3": "Communications & marketing", "bg.viestinta.p": "Over 5 years of multichannel communications and marketing in social and education sector organisations — independently, with limited resources.", "bg.sosiaali.h3": "Social work foundation", "bg.sosiaali.p": "Over 10 years working with children, young people and families — from early childhood education to child protection and neuropsychiatric coaching.", "bg.kehittaminen.h3": "Development & training", "bg.kehittaminen.p": "Service design, project work, course development and webinars. A hands-on, goal-oriented approach.", "edu.label": "Education:", "edu.d1": "Social psychology, intermediate studies <em>(in progress)</em>", "edu.d2": "Social sciences, basic studies", "edu.d3": "Neuropsychiatric Coach – solution-focused, animal-assisted", "edu.d4": "Bachelor of Social Services (UAS)", "edu.d5": "Practical Nurse", "edu.d6": "Finnish Matriculation Examination", "edu.d7": "Vocational Qualification in Sales and Marketing", "edu.note": "Additional training in marketing, communications, AI and interaction.", "lang.label": "Working languages:", "lang.fi": "🇫🇮 Finnish – native", "lang.en": "🇬🇧 English – excellent", "lang.sv": "🇸🇪 Swedish – working knowledge", "work.label": "Work experience:", "work.org1": "Toisintekijät Oy / Elämän Huoltamo Oy", "work.r1": "Marketing & Communications Manager", "work.r2": "Project Coordinator", "work.r3": "Development Coordinator", "work.org2": "Elämän Huoltamo Oy", "work.r4": "Social Services Coordinator", "work.r5": "Child Welfare Open Services Worker", "work.org3": "Service Foundation for People with an Intellectual Disability", "work.r6": "Experience Educator", "work.org4": "Harjulan Setlementti ry", "work.r7": "Childcare Worker", "work.org5": "City of Lahti", "work.r8": "Day Care Worker", "work.org6": "Kultajousi Oy", "work.r9": "Sales Assistant / Store Manager", "work.note": "Social work internships in substance abuse and mental health rehabilitation services, employment coaching, disability services, social rehabilitation and child welfare family work. Also various development-related project work.", "res.l1": "organic sign-ups per webinar", "res.l2": "returning participants in webinars", "res.l3": "newsletter subscribers from zero, organically", "res.l4": "accounts reached with a single Facebook post", "res.l5": "views on TikTok", "res.l6": "downloads of the Neurodiversity-Friendly Workplace guide", "res.n1": "Professionally managed: registration, reminders and follow-up marketing — the right audience was reached", "res.n2": "~95% of participants were the target audience — the audience engages and returns", "res.n3": "Open rate 25–35% · low churn · growing steadily", "res.n4": "Account had under 2,000 followers — the right content finds its audience", "res.n5": "Text-based post · 283 likes · 211 saves · 36 shares", "res.n6": "Clear content that genuinely serves the target audience", "res.callout": "I have grown into a professional for whom both <strong>human understanding and digital skills</strong> come naturally. Results happen when the audience is truly understood — not just in a marketing sense.", "sk.viestinta.h3": "📣 Communications & content production", "sk.viestinta.r1": "<strong>Multichannel social media</strong> – Facebook, Instagram, TikTok, LinkedIn, YouTube, Vimeo", "sk.viestinta.r2": "<strong>Email marketing</strong> – Mailchimp, automations, newsletters", "sk.viestinta.r3": "<strong>Websites</strong> – WordPress, content structure, SEO basics", "sk.viestinta.r7": "<strong>Blogs</strong> – content about people, everyday life and working life", "sk.viestinta.r4": "<strong>Visual communications</strong> – image editing, AI images, layout, video", "sk.viestinta.r8": "<strong>Video editing</strong> – DaVinci Resolve, webinars, short videos", "sk.viestinta.r5": "<strong>Analytics</strong> – GA4, Semrush", "sk.viestinta.r6": "<strong>Paid advertising</strong> – Meta Ads, Google Ads", "sk.koulutus.h3": "🎓 Training & development", "sk.koulutus.r1": "<strong>Course development</strong> – webinars, online courses, learning materials", "sk.koulutus.r2": "<strong>Expert content</strong> on topics related to people and society – including blogs and the <em>Nepsy Perhe PLUS</em> and <em>Neurodiversiteetti työelämässä</em> online courses", "sk.koulutus.r3": "<strong>Service design</strong> – user perspective, building customer journeys", "sk.koulutus.r4": "<strong>Facilitation & project work</strong> – projects, development, cross-sector collaboration", "sk.koulutus.r5": "<strong>Neurodiversity expertise</strong> – neurodiversity themes in everyday life and the workplace, solution-focused approach", "sk.koulutus.r6": "<strong>Internal communications</strong> – intranet management, materials production", "sk.tyoelama.h3": "💬 Understanding of workplace phenomena", "sk.tyoelama.r1": "Interaction, psychological safety and team dynamics", "sk.tyoelama.r2": "The effects of uncertainty and change on individuals and communities", "sk.tyoelama.r3": "Emotions at work, feedback culture, management", "sk.tyoelama.r4": "Social psychological foundation for understanding people and groups", "sk.special.h3": "⭐ Special expertise – development, articulation and human understanding", "sk.special.p": "I can articulate sensitive or complex topics clearly and respectfully in the audience's language. I understand phenomena more deeply than just as marketing or communications, and I can build messages that both resonate and inform. I also quickly grasp a brand's voice and produce content that fits that particular organisation.", "ai.h3": "🤖 Using AI tools", "ai.p1": "I actively use AI tools to support marketing and communications planning and content production. I have used Copilot, Gemini, and most extensively ChatGPT in practical work.", "ai.p2": "Most recently I have explored what Claude offers and use it as an assistant for both project management and everyday tasks — this portfolio was produced with its help. I approach AI with curious professionalism: it is a tool that helps in everyday life and work, but the responsibility always lies with the person.", "dev.1.h3": "Early childhood education & participatory development", "dev.1.ul": "<li>Improving everyday operations with attention to children needing special support</li><li>Introducing drama education methods</li><li>Language and movement group for children with language disorders and immigrant backgrounds</li><li>Staff training on neurodiversity themes</li>", "dev.2.h3": "Digital development", "dev.2.ul": "<li>SharePoint environment to enable multi-location working</li><li>Building communication channels and further developing client documentation systems</li><li>Creating infographics and tutorial videos for system use</li><li>Building and maintaining an intranet</li>", "dev.3.h3": "Service conceptualisation", "dev.3.ul": "<li>Conceptualising an online service for brief therapeutic psychological support</li><li>Techniques and supporting materials from commissioner, provider and client perspectives</li><li>Development work on a digital pocket coach</li><li>Redesigning an online course into a participatory online coaching programme</li>", "dev.4.h3": "Online training & pedagogy", "dev.4.ul": "<li>Two online courses: technical implementation and partial content responsibility</li><li>Planning and measuring pedagogical effectiveness</li><li>Building lead funnels around training programmes</li>", "dev.5.h3": "Websites & content strategy", "dev.5.ul": "<li>Website migration to a new platform – team of 3</li><li>Content development and renewal of operational strategy</li><li>Building lead funnels and lists</li>", "dev.6.h3": "Internal development", "dev.6.ul": "<li>Internal communications development in several organisations</li><li>Customer satisfaction and 360 surveys, and reporting</li><li>Measuring and planning pedagogical effectiveness of training</li>", "s.elama.sub": "Child protection, therapy & family support services", "s.elama.ul": "<li>Multichannel social media – Facebook, Instagram, LinkedIn, TikTok</li><li>TikTok post: 21,000+ views, 283 likes, 211 saves</li><li>Monthly newsletters to 2,000 subscribers</li><li>Google Ads and Meta advertising on modest budgets</li><li>Course development and online course content</li><li>Advertisements, price lists, training materials</li><li>Website content and service design</li>", "s.elama.stat1": "📊 21K+ TikTok views", "s.elama.stat2": "📧 2,000 subscribers", "s.toisi.sub": "Leadership, interaction & work ability", "s.toisi.ul": "<li>LinkedIn, Instagram, Facebook – growing following</li><li>Webinar marketing and practical webinar delivery</li><li>Short videos and webinar editing</li><li>Brochures, exhibition panels, guides, client references</li><li>Monthly newsletters to 4,000 subscribers</li><li>Toisintekijät Akatemia: technical implementation and online course content</li><li>Involved in development work on a digital pocket coach</li><li>Customer satisfaction and 360 surveys and report production</li>", "s.toisi.stat1": "🎓 ~120 sign-ups/webinar", "s.toisi.stat2": "📄 Guide: 400+ downloads", "ctx.p1": "<em>Versatile and evolving role:</em> the role has shifted from client work and supervisory work into development, IT support and marketing communications. Sales and marketing results were achieved alongside other responsibilities.", "ctx.p2": "Around <em>95% of webinar participants were the target audience</em> — a professionally managed whole reaches the right people.", "links.h3": "📎 Public channels – some of the content is mine", "links.p": "Links to channels whose content I have been responsible for — I am happy to share more examples and work samples in a meeting.", "p.luova.h3": "🎨 Creative work + data", "p.luova.p": "Creative work is inspiring and data tells you how well it worked. I enjoy ideation just as much as checking the analytics to see what works — and doing more of it.", "p.oppiminen.h3": "📚 Love of learning", "p.oppiminen.p": "I always have something new on the go. Most recently it has been using AI in work and everyday life. Before that it was knitting. Alongside work I study social sciences at Tampere Open University and am particularly interested in the social psychological perspective.", "p.alma.h3": "🐾 How I recharge", "p.alma.p": "My most delightful wellbeing companion is 8-year-old Alma, a former neuropsychiatric coaching assistance dog and now the official remote-working support dog. Other ways I recharge include forest walks, the gym, skiing, cycling and singing.", "p.disc.h3": "DiSC work-style analysis", "p.disc.p": "Priorities: collaboration, support and enthusiasm — plus action-oriented, which is not typical of the Si style. I work well independently and value good team spirit, bringing my own contribution to it.", "p.disc.pill": "Si style + action-oriented", "p.kollegat.h3": "What colleagues say 🥰", "q.i1": "\"Brightens the atmosphere and brings joy\"", "q.i2": "\"Himmelihanna – builds all kinds of digital systems\"", "q.i3": "\"Brave and reliable\" – Wednesday compliments feedback", "q.i4": "\"Productive and versatile – you can drop all kinds of tasks on the desk\"", "q.i5": "\"A great ideas partner – gets enthusiastic and also brings a critical perspective\"", "q.i6": "\"Admits when she doesn't know something – and adds that she'll learn it\"", "c.footer": "Remote or hybrid · 2026", "footer.note": "Open to new opportunities", "footer.cta": "Get in touch", "tool.c1": "Communications & content", "tool.c2": "Advertising & analytics", "tool.c3": "Systems", "tool.c4": "AI tools", "nav.koulutus": "Education", "nav.tyokokemus": "Work experience", "lbl.koulutus": "Education", "lbl.tyokokemus": "Work experience", "h2.koulutus": "Learning never stops", "h2.tyokokemus": "A varied career"}
+};
+function toggleLang() {
+  const html = document.documentElement;
+  const isEN = html.getAttribute('lang') === 'en';
+  const lang = isEN ? 'fi' : 'en';
+  html.setAttribute('lang', lang);
+  document.getElementById('langBtn').textContent = lang === 'en' ? '\uD83C\uDF10 FI' : '\uD83C\uDF10 EN';
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    const text = T[lang] && T[lang][key];
+    if (text !== undefined) el.innerHTML = text;
+  });
+}
+
+/* ── Scroll-driven UI ───────────────────────────────── */
+(function(){
+  var btn     = document.getElementById('backToTop');
+  var footer  = document.getElementById('stickyFooter');
+  var contact = document.getElementById('yhteystiedot');
+  function onScroll(){
+    var scrolled = window.scrollY > 400;
+    if(scrolled) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+    if(contact){
+      var rect = contact.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight * 0.85;
+      if(inView) footer.classList.add('hidden');
+      else footer.classList.remove('hidden');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+<!-- Back-to-top -->
+<button id="backToTop" aria-label="Takaisin alkuun" title="Takaisin alkuun" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- Sticky footer -->
+<div id="stickyFooter">
+  <span class="sf-note" data-key="footer.note">Avoin uusille mahdollisuuksille</span>
+  <a href="#yhteystiedot" class="sf-cta" data-key="footer.cta">Ota yhteyttä</a>
+</div>
+</body>
+</html>
