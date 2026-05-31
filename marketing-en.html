@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing & Communications – Johanna Toppinen</title>
+<style>
+  :root{--bg:#F5F5F7;--bg-card:#FFFFFF;--text:#1D1D1F;--muted:#6E6E73;--border:#D2D2D7;--terra:#C44527;--terra-h:#A8391F;--purple:#6E5EF0;--teal:#0A8F8F;--orange:#D4622A;--font:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:52px;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,245,247,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:52px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-size:1rem;font-weight:600;color:var(--text);text-decoration:none;}
+  .nav-back{color:var(--muted);text-decoration:none;font-size:.875rem;transition:color .2s;display:flex;align-items:center;gap:.3rem;}
+  .nav-back:hover{color:var(--terra);}
+  .page{max-width:860px;margin:0 auto;padding:6rem 2rem 4rem;}
+  .page-eyebrow{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--purple);font-weight:600;margin-bottom:.6rem;}
+  h1{font-size:clamp(2rem,5vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;background:linear-gradient(90deg,#6E5EF0 0%,#B0347C 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .page-lead{font-size:1.05rem;color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:3rem;}
+  hr{border:none;border-top:1px solid var(--border);margin:3rem 0;}
+  h2{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;}
+  p{color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:1rem;}
+  p strong{color:var(--text);}
+  p:last-child{margin-bottom:0;}
+  .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:.5rem;}
+  @media(max-width:700px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.metric-grid{grid-template-columns:1fr;}}
+  .metric-note{font-size:.72rem;color:var(--muted);margin-bottom:2.5rem;}
+  .metric{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+  .metric-num{font-size:1.8rem;font-weight:700;letter-spacing:-.03em;color:var(--purple);}
+  .metric-num.t{color:var(--teal);}
+  .metric-num.o{color:var(--orange);}
+  .metric-label{font-size:.78rem;color:var(--muted);margin-top:.2rem;}
+  .metric-bench{font-size:.7rem;color:var(--purple);margin-top:.15rem;font-weight:500;}
+  .metric-bench.t{color:var(--teal);}
+  .co{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;margin-bottom:1rem;}
+  .co-name{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);font-weight:600;margin-bottom:1.25rem;}
+  .co.teal .co-name{color:var(--teal);}
+  .ch{display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+  .ch:last-child{border-bottom:none;padding-bottom:0;}
+  .ch-badge-col{flex-shrink:0;width:110px;padding-top:.1rem;}
+  .ch-content{flex:1;min-width:0;}
+  .badge{display:inline-block;padding:.18rem .55rem;border-radius:999px;font-size:.68rem;font-weight:600;white-space:nowrap;}
+  .badge-g{background:rgba(10,143,143,.1);color:var(--teal);}
+  .badge-p{background:rgba(110,94,240,.1);color:var(--purple);}
+  .ch-title{font-size:.9rem;font-weight:600;margin-bottom:.2rem;}
+  .ch-text{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:.2rem;}
+  .ch-stat{font-size:.77rem;color:var(--purple);font-weight:500;}
+  .co.teal .ch-stat{color:var(--teal);}
+  .tools{display:flex;flex-wrap:wrap;gap:.4rem;}
+  .tool{padding:.28rem .65rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;font-size:.78rem;color:var(--muted);}
+  .samples-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:.35rem;}
+  .samples-label.p{color:var(--purple);}
+  .samples-label.t{color:var(--teal);}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.25rem;margin-bottom:0;}
+  @media(max-width:580px){.gallery{grid-template-columns:repeat(2,1fr);}}
+  .gitem{border-radius:12px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border);transition:box-shadow .2s;}
+  .gitem:hover{box-shadow:0 8px 28px rgba(0,0,0,0.09);}
+  .gitem img{width:100%;display:block;aspect-ratio:4/3;object-fit:contain;background:#EBEBED;padding:.5rem;}
+  .gitem video{width:100%;display:block;aspect-ratio:4/3;background:#1D1D1F;}
+  .gcap{font-size:.72rem;color:var(--muted);padding:.5rem .75rem .65rem;line-height:1.4;}
+  footer{text-align:center;padding:2rem;font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem;}
+
+  .contact-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(245,245,247,0.96);backdrop-filter:blur(20px);border-top:1px solid var(--border);height:52px;padding:0 2rem;display:flex;align-items:center;justify-content:flex-end;}
+  .contact-bar-btn{background:var(--terra);color:#fff;padding:.5rem 1.25rem;border-radius:980px;text-decoration:none;font-size:.875rem;font-weight:600;transition:background .2s;}
+  .contact-bar-btn:hover{background:var(--terra-h);}
+  .lang-switch{display:flex;align-items:center;gap:.4rem;font-size:.8rem;}
+  .lang-on{font-weight:700;color:var(--text);}
+  .lang-sep{color:var(--muted);}
+  .lang-off{color:var(--muted);text-decoration:none;transition:color .2s;}
+  .lang-off:hover{color:var(--terra);}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index-en.html">Johanna Toppinen</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;"><div class="lang-switch"><a class="lang-off" href="some-markkinointi.html">FI</a><span class="lang-sep"> | </span><span class="lang-on">EN</span></div><a class="nav-back" href="index-en.html">← Home</a></div>
+</nav>
+<div class="page">
+  <div class="page-eyebrow">Area of Expertise</div>
+  <h1>Marketing &amp; Communications</h1>
+  <p class="page-lead">
+    I was responsible for the entire digital communications of two companies: strategy, execution, measurement — 7 social media channels, 2 email lists, webinar production and marketing, website content, brochures and customer journeys — alongside other responsibilities. For the past year, as a one-person team. Results exceed industry benchmarks across multiple metrics.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-num">6.90&thinsp;%</div>
+      <div class="metric-label">LinkedIn engagement rate (Toisintekijät)</div>
+      <div class="metric-bench">Industry avg. 2–4 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num t">21&nbsp;500</div>
+      <div class="metric-label">Views on a single informative text-based TikTok post (Elämän Huoltamo)</div>
+      <div class="metric-bench t">Exceptional for social & health sector</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">4.83&thinsp;%</div>
+      <div class="metric-label">Email click-through rate (Toisintekijät)</div>
+      <div class="metric-bench">Industry avg. 2–4 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num o">26.3&thinsp;%</div>
+      <div class="metric-label">Email open rate (Elämän Huoltamo)</div>
+      <div class="metric-bench">Industry avg. 20–25 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num t">5&nbsp;100+</div>
+      <div class="metric-label">Email subscribers total</div>
+      <div class="metric-bench t">Across two brands</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">11.2&thinsp;%</div>
+      <div class="metric-label">Instagram engagement rate (Toisintekijät)</div>
+      <div class="metric-bench">B2B avg. 3–8 %</div>
+    </div>
+  </div>
+  <p class="metric-note">All results on this page cover the period 28 May 2025 – 28 May 2026</p>
+
+  <hr>
+  <h2>Toisintekijät Oy — corporate training &amp; development</h2>
+  <p>B2B training company. Target audience: HR decision-makers, managers, development specialists.</p>
+  <div class="co">
+    <div class="co-name">Toisintekijät Oy · Channels</div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">⭐ Excellent</span></div>
+      <div class="ch-content">
+        <div class="ch-title">LinkedIn</div>
+        <p class="ch-text">128 posts (2–3/week), consistent pace throughout the year. 16,634 impressions. <strong>6.90% engagement rate</strong> — more than double the industry norm.</p>
+        <div class="ch-stat">↗ 3.4% click rate of all impressions</div>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">✅ Strong</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Email (Mailchimp)</div>
+        <p class="ch-text">3,188 subscribers, growth +6.94%. <strong>208 new subscribers in 90 days.</strong> Click-through rate 4.83% (+13%) — top quartile for B2B training sector.</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">✅ Growing</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Instagram</div>
+        <p class="ch-text">33,300 impressions. Interactions and followers <strong>both doubled (+100%).</strong> Engagement rate 11.2%.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h2>Elämän Huoltamo Oy — child welfare open care services</h2>
+  <p>Social &amp; health sector provider. Target audience: families, parents, social and education professionals.</p>
+  <div class="co teal">
+    <div class="co-name">Elämän Huoltamo Oy · Channels</div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">⭐ Excellent</span></div>
+      <div class="ch-content">
+        <div class="ch-title">TikTok</div>
+        <p class="ch-text">276 followers (channel still growing). <strong>59,000+ views</strong> without paid advertising. Top post: 21,500 views. Audience: 67.5% women, largest age group 45–54, 73% from Finland.</p>
+        <div class="ch-stat">↗ Informative text-based content — exceptional in the social &amp; health sector</div>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Good</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Facebook</div>
+        <p class="ch-text"><strong>138,700 organic impressions</strong> in a year. +134 new followers (+362%).</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Growing</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Instagram</div>
+        <p class="ch-text">56,500 impressions. Interactions doubled. Engagement rate 3.2%. 565 link clicks.</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Quality</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Email (Mailchimp)</div>
+        <p class="ch-text">1,989 subscribers. <strong>26.33% open rate</strong> (industry avg. 20–25%). Very low churn — a sustainably built list.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2rem;">
+    <p style="margin:0;font-size:.93rem;color:var(--text);">At this volume and with these results, the workload equals a team of 2–3 people. You could say I'm a high achiever.</p>
+  </div>
+
+  <h2>Work samples</h2>
+
+  <div style="margin-bottom:2.5rem;">
+    <div class="samples-label p">Toisintekijät Oy</div>
+    <p>Webinars, online courses, lead magnets and social media marketing for a B2B training company.</p>
+    <div class="gallery">
+      <div class="gitem"><img src="Toisintekijät webinaarit.JPG" alt="Webinar marketing"><div class="gcap">Webinar production and editing — used as a lead generation source</div></div>
+      <div class="gitem"><img src="Toisintekijät Instagram feed.png" alt="Instagram feed"><div class="gcap">Instagram feed — visual brand identity and engaging content</div></div>
+      <div class="gitem"><video controls preload="metadata" onloadedmetadata="this.currentTime=2"><source src="Toisintekijät Trauma osana elämäntarinaa-koulutus.MP4" type="video/mp4"></video><div class="gcap">Marketing for continuing education in the social &amp; health sector</div></div>
+      <div class="gitem"><img src="Toisintekijät NDT verkkokurssi.PNG" alt="NDT online course"><div class="gcap">Online course content, pedagogy and impact measurement</div></div>
+      <div class="gitem"><img src="Toisintekijät Näin muotoilet neurodiversiteettiystävällisen työympäristön-opas.JPEG" alt="Lead magnet guide"><div class="gcap">Lead magnets and downloadable resources</div></div>
+      <div class="gitem"><img src="Toisintekijät Akatemia.png" alt="Toisintekijät Akatemia"><div class="gcap">Toisintekijät Akatemia — course platform administration and development</div></div>
+      <div class="gitem"><img src="Toisintekijät Yaxan-esite.jpg" alt="Yaxan brochure" style="object-fit:cover;background:transparent;padding:0;"><div class="gcap">Print materials</div></div>
+      <div class="gitem"><img src="Toisintekijät luentotallenne Kun kaikkia.PNG" alt="Lecture recordings"><div class="gcap">Lecture recordings — editing and use in customer journeys</div></div>
+      <div class="gitem"><img src="Toisintekijät uutiskirje.png" alt="Newsletter"><div class="gcap">Email marketing — newsletters, campaigns and automations</div></div>
+      <div class="gitem"><video controls preload="metadata" onloadedmetadata="this.currentTime=2"><source src="Toisintekijät videokuvauksia.mp4" type="video/quicktime"><source src="Toisintekijät videokuvauksia.mp4" type="video/mp4"></video><div class="gcap">Occasional video and photo production when needed.</div></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:2.5rem;">
+    <div class="samples-label t">Elämän Huoltamo Oy</div>
+    <p>Social media channels, brochures, ads, guides and print materials for a child welfare open care provider.</p>
+    <div class="gallery">
+      <div class="gitem"><img src="Elämän Huoltamo TikTokpostaus.png" alt="TikTok content"><div class="gcap">Social media strategy and content production</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Instagram ruudukko.png" alt="Instagram grid"><div class="gcap">Instagram grid — visual coherence</div></div>
+      <div class="gitem"><video controls preload="metadata" onloadedmetadata="this.currentTime=1.5"><source src="Elämän Huoltamo me autetaan video.MP4" type="video/mp4"></video><div class="gcap">Brand communications that stand out</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Nepsy Perhe PLUS -verkkovalmennus.jpg" alt="Nepsy Perhe PLUS online coaching"><div class="gcap">Expert content and service design using participatory methods</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo mainos.JPG" alt="Advertisement"><div class="gcap">Organic and paid advertising — Meta + Google Ads</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Nepsy Perhe PLUS flyeri.PNG" alt="Nepsy Perhe PLUS flyer"><div class="gcap">Flyers, ads and brochures</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Ohjevideoita intraan.PNG" alt="Intranet tutorial videos"><div class="gcap">Tutorial videos for the intranet — internal communications</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Kirjallisia ohjeita intraan.png" alt="Written intranet guides"><div class="gcap">Written guides for the intranet — internal communications</div></div>
+      <div class="gitem"><video controls preload="metadata" onloadedmetadata="this.currentTime=1.5"><source src="Elämän Huoltamo Nepsy Perhe PLUS ilmoittautuminen on auki.MP4" type="video/mp4"></video><div class="gcap">Video communications and service ads</div></div>
+      <div class="gitem"><img src="Elämän Huoltamo Printtimateriaalit.jpg" alt="Print materials"><div class="gcap">Print materials for trade shows and events</div></div>
+    </div>
+  </div>
+
+  <hr>
+  <h2>Tools used</h2>
+  <div class="tools">
+    <span class="tool">Meta Business Suite</span><span class="tool">Meta Ads Manager</span><span class="tool">Meta Pixel</span><span class="tool">Google Analytics 4</span><span class="tool">Google Tag Manager</span><span class="tool">Mailchimp</span><span class="tool">Simplified</span><span class="tool">TikTok Creator Studio</span><span class="tool">Canva</span><span class="tool">DaVinci Resolve</span><span class="tool">CapCut / Edits</span><span class="tool">WordPress</span>
+  </div>
+</div>
+<footer><a href="index-en.html" style="color:var(--terra);text-decoration:none;">← Home</a> &nbsp;·&nbsp; © 2026 Johanna Toppinen. All rights reserved.</footer>
+
+<div class="contact-bar">
+  <a href="mailto:johanna.toppinen@gmail.com" class="contact-bar-btn">Send a message</a>
+</div>
+</body>
+</html>

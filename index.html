@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johanna Toppinen – Portfolio</title>
+<style>
+  :root {
+    --bg:       #F5F5F7;
+    --bg-card:  #FFFFFF;
+    --bg-dark:  #1D1D1F;
+    --text:     #1D1D1F;
+    --muted:    #6E6E73;
+    --border:   #D2D2D7;
+    --terra:    #C44527;
+    --terra-h:  #A8391F;
+    --purple:   #6E5EF0;
+    --teal:     #0A8F8F;
+    --orange:   #D4622A;
+    --rose:     #B0347C;
+    --green:    #2A9D6F;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245,245,247,0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    height: 52px; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* Hamburger */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 6px;
+  }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .25s; }
+
+  @media (max-width: 640px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 52px; left: 0; right: 0;
+      background: rgba(245,245,247,0.98); border-bottom: 1px solid var(--border);
+      flex-direction: column; gap: 0; padding: 0.5rem 0;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.85rem 2rem; font-size: 1rem; border-bottom: 1px solid var(--border); }
+    .nav-links a:last-child { border-bottom: none; }
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero { max-width: 860px; margin: 0 auto; padding: 9rem 2rem 5rem; display: flex; align-items: center; gap: 4rem; }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-photo { flex-shrink: 0; }
+  .hero-photo img { width: 200px; height: 200px; border-radius: 50%; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  @media (max-width: 680px) {
+    .hero { flex-direction: column-reverse; gap: 2rem; padding-top: 7rem; }
+    .hero-photo img { width: 140px; height: 140px; }
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--terra); font-weight: 600; margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 700; letter-spacing: -0.04em; line-height: 1.06;
+    color: var(--text); margin-bottom: 1.25rem;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.18rem);
+    color: var(--muted); max-width: 580px; line-height: 1.75; margin-bottom: 2.5rem;
+  }
+  .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.65rem 1.35rem; border-radius: 980px;
+    font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: all .2s;
+  }
+  .btn-terra { background: var(--terra); color: #fff; }
+  .btn-terra:hover { background: var(--terra-h); }
+  .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: transparent; }
+  .btn-outline:hover { border-color: var(--terra); color: var(--terra); }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    padding: 0.25rem 0.75rem; border-radius: 999px;
+    border: 1px solid var(--border); font-size: 0.775rem; color: var(--muted); background: var(--bg-card);
+  }
+
+  /* ── GRADIENT TEXT ───────────────────────────────── */
+  .grad {
+    background: linear-gradient(90deg, #C44527 0%, #6E5EF0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── STAT STRIP ──────────────────────────────────── */
+  .stat-strip { background: var(--bg-dark); padding: 3.5rem 2rem; }
+  .stat-grid {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .stat {
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 16px; padding: 1.5rem 1rem;
+  }
+  .stat-num { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; }
+  .c-purple { color: #A89BFF; }
+  .c-teal   { color: #4CCECE; }
+  .c-terra  { color: #E8855E; }
+  .c-orange { color: #F5A464; }
+  .c-lime   { color: #8ADB8A; }
+  .stat-label { font-size: 0.78rem; color: #8E8E93; margin-top: 0.35rem; line-height: 1.45; }
+  .stat-bench { font-size: 0.7rem; color: #A89BFF; margin-top: 0.25rem; font-weight: 500; }
+  .stat-bench.t { color: #4CCECE; }
+  .stat-bench.o { color: #F5A464; }
+  @media (max-width: 700px) { .stat-grid { grid-template-columns: 1fr; } }
+
+  /* ── SECTIONS ─────────────────────────────────────── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--terra); font-weight: 600; margin-bottom: 0.6rem;
+  }
+  h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+  .section-desc { color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.1rem); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.7; }
+
+  /* ── THREE PILLAR CARDS ───────────────────────────── */
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  @media (max-width: 750px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .pillars { grid-template-columns: 1fr; } }
+  .pillar {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
+    padding: 2rem 1.75rem 1.5rem; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: box-shadow .25s, transform .25s; position: relative; overflow: hidden;
+  }
+  .pillar:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
+  .pillar-stripe { position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 18px 18px 0 0; }
+  .pillar.p-social    .pillar-stripe { background: var(--teal); }
+  .pillar.p-marketing .pillar-stripe { background: var(--purple); }
+  .pillar.p-dev       .pillar-stripe { background: var(--orange); }
+  .pillar.p-edu       .pillar-stripe { background: var(--rose); }
+  .pillar.p-tools     .pillar-stripe { background: var(--green); }
+  .pillar-icon { font-size: 2rem; margin-bottom: 0.85rem; margin-top: 0.25rem; }
+  .pillar-title { font-size: clamp(1.05rem, 2vw, 1.2rem); font-weight: 700; margin-bottom: 0; flex: 1; }
+  .pillar.p-social    .pillar-title { color: var(--teal); }
+  .pillar.p-marketing .pillar-title { color: var(--purple); }
+  .pillar.p-dev       .pillar-title { color: var(--orange); }
+  .pillar.p-edu       .pillar-title { color: var(--rose); }
+  .pillar.p-tools     .pillar-title { color: var(--green); }
+  .pillar-arrow {
+    align-self: flex-end; margin-top: 1.25rem;
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    background: #1D1D1F; display: flex; align-items: center; justify-content: center;
+    transition: background .2s, transform .2s;
+  }
+  .pillar-arrow svg { width: 18px; height: 18px; stroke: #fff; }
+  .pillar:hover .pillar-arrow { background: var(--terra); transform: scale(1.08); }
+  @media (max-width: 700px) {
+    .pillar-arrow { width: 32px; height: 32px; }
+    .pillar-arrow svg { width: 16px; height: 16px; }
+    .diff-header { gap: 0.5rem; }
+    .hl-card-header { gap: 0.5rem; }
+  }
+
+  /* ── HIGHLIGHT BOX ────────────────────────────────── */
+  .highlight {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 2.5rem;
+    display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; margin-top: 1.5rem;
+  }
+  .hl-left { min-width: 180px; text-align: center; }
+  .hl-big { font-size: 3.2rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: var(--terra); }
+  .hl-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+  .hl-right { flex: 1; min-width: 220px; }
+  .hl-right p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+  .hl-right strong { color: var(--text); }
+
+  /* ── DIFFERENTIATORS ──────────────────────────────── */
+  .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .diff {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.25rem 1.5rem; cursor: pointer;
+    transition: box-shadow .2s, border-color .2s;
+  }
+  .diff:hover { border-color: var(--terra); }
+  .diff.open { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .diff-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .diff-header-left { display: flex; align-items: center; gap: 0.85rem; }
+  .diff-icon { width: 30px; height: 30px; flex-shrink: 0; }
+  .diff-title { font-size: 0.95rem; font-weight: 600; }
+  .diff-chevron {
+    width: 22px; height: 22px; flex-shrink: 0; color: var(--muted);
+    transition: transform .25s;
+  }
+  .diff.open .diff-chevron { transform: rotate(180deg); color: var(--terra); }
+  .diff-body {
+    display: none; font-size: 0.83rem; color: var(--muted); line-height: 1.6;
+    padding-top: 0.85rem; margin-top: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  .diff.open .diff-body { display: block; }
+
+  /* Highlight accordion card */
+  .hl-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 1.75rem 2rem; margin-top: 1.5rem;
+    cursor: pointer; transition: box-shadow .2s, border-color .2s;
+  }
+  .hl-card:hover { border-color: var(--terra); }
+  .hl-card.open { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .hl-card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .hl-card-left {}
+  .hl-card-big { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; color: var(--terra); line-height: 1.1; }
+  .hl-card-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  .hl-card-chevron { width: 28px; height: 28px; flex-shrink: 0; color: var(--muted); transition: transform .25s; }
+  .hl-card.open .hl-card-chevron { transform: rotate(180deg); color: var(--terra); }
+  .hl-card-body {
+    display: none; font-size: 0.93rem; color: var(--muted); line-height: 1.75;
+    padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--border);
+  }
+  .hl-card.open .hl-card-body { display: block; }
+  .hl-card-body strong { color: var(--text); }
+
+  hr { border: none; border-top: 1px solid var(--border); }
+
+  /* ── CONTACT ──────────────────────────────────────── */
+  .contact-wrap {
+    background: var(--bg-card); border-top: 1px solid var(--border);
+    padding: 5rem 2rem; text-align: center;
+  }
+  .contact-inner { max-width: 440px; margin: 0 auto; }
+  .contact-avatar { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.25rem; display: block; box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+  .contact-inner h2 { margin-bottom: 0.75rem; }
+  .contact-inner p { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.7; }
+  .contact-pill {
+    display: inline-block; background: var(--terra); color: #fff;
+    padding: 0.7rem 1.6rem; border-radius: 980px;
+    text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background .2s;
+  }
+  .contact-pill:hover { background: var(--terra-h); }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  footer {
+    background: var(--bg); border-top: 1px solid var(--border);
+    padding: 1.75rem 2rem; text-align: center; font-size: 0.78rem; color: var(--muted);
+  }
+
+  /* ── STICKY CONTACT BAR ── */
+  .contact-bar {
+    position:fixed; bottom:0; left:0; right:0; z-index:200;
+    background:rgba(245,245,247,0.96); backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+    height:52px; padding:0 2rem;
+    display:flex; align-items:center; justify-content:flex-end;
+  }
+  .contact-bar-btn {
+    background:var(--terra); color:#fff;
+    padding:.5rem 1.25rem; border-radius:980px;
+    text-decoration:none; font-size:.875rem; font-weight:600; transition:background .2s;
+  }
+  .contact-bar-btn:hover { background:var(--terra-h); }
+  /* ── LANG TOGGLE ── */
+  .lang-switch { display:flex; align-items:center; gap:.4rem; font-size:.8rem; }
+  .lang-on { font-weight:700; color:var(--text); }
+  .lang-sep { color:var(--muted); }
+  .lang-off { color:var(--muted); text-decoration:none; transition:color .2s; }
+  .lang-off:hover { color:var(--terra); }
+  body { padding-bottom:52px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Johanna Toppinen</a>
+  <div class="nav-links" id="nav-links">
+    <a href="#osaamisalueet" onclick="closeNav()">Osaamisalueet</a>
+    <a href="#erottautuminen" onclick="closeNav()">Vahvuudet</a>
+    <a href="#yhteystiedot" onclick="closeNav()">Yhteystiedot</a>
+  </div>
+  <div class="lang-switch"><span class="lang-on">FI</span><span class="lang-sep"> | </span><a class="lang-off" href="index-en.html">EN</a></div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Valikko">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+  <div class="hero-eyebrow">Viestintä · Kehittäminen · Sosiaaliala</div>
+  <h1 class="grad">Johanna<br>Toppinen</h1>
+  <p class="hero-sub">
+    Ymmärrän ihmisiä, palveluita ja järjestelmiä — näen haasteissa mahdollisuuksia ja osaan sanoittaa monimutkaiset asiat selkeästi oikeille kohderyhmille.
+  </p>
+  <div class="cta-row">
+    <a href="#osaamisalueet" class="btn btn-terra">Tutustu osaamiseen</a>
+    <a href="mailto:johanna.toppinen@gmail.com" class="btn btn-outline">Lähetä viesti</a>
+  </div>
+  <div class="hero-tags">
+    <span class="tag">Viestintäsuunnittelija</span>
+    <span class="tag">Sisältöstrategi</span>
+    <span class="tag">Kehittämisasiantuntija</span>
+    <span class="tag">Koulutussuunnittelija</span>
+    <span class="tag">Järjestöviestintä</span>
+    <span class="tag">Sote-ala</span>
+    <span class="tag">Neuropsykiatrinen valmentaja</span>
+    <span class="tag">Sosiaalipsykologia</span>
+  </div>
+  </div><!-- /hero-text -->
+  <div class="hero-photo">
+    <img src="johanna-profiilikuva.svg" alt="Johanna Toppinen">
+  </div>
+</div>
+
+<!-- OSAAMISALUEET -->
+<section id="osaamisalueet">
+  <div class="section-inner">
+    <div class="section-label">Osaamisalueet</div>
+    <h2 class="grad">Mitä osaan — ja mitä olen saanut aikaan</h2>
+    <p class="section-desc">Klikkaa osaamisaluetta nähdäksesi lisää.</p>
+
+    <div class="pillars">
+
+      <a href="some-markkinointi.html" class="pillar p-marketing">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">📣</div>
+        <div class="pillar-title">Markkinointi &amp; viestintä</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+
+      <a href="kehittaminen.html" class="pillar p-dev">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">🔧</div>
+        <div class="pillar-title">Kehittäminen</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+
+      <a href="sosiaaliala.html" class="pillar p-social">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-title">Sosiaaliala &amp; asiakastyö</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+
+<a href="tyokalut.html" class="pillar p-tools">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">💻</div>
+        <div class="pillar-title">Digitaalinen osaaminen</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+
+    </div>
+
+
+  </div>
+</section>
+
+<hr>
+
+<!-- VAHVUUDET -->
+<section id="erottautuminen" style="background: var(--bg-card);">
+  <div class="section-inner">
+    <div class="section-label">Vahvuudet</div>
+    <h2 class="grad">Miksi minut?</h2>
+    <p class="section-desc">Yhdistelmä osaamista, jota on vaikea löytää valmiina.</p>
+    <div class="diff-grid">
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#6E5EF0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span class="diff-title">Harvinainen yhdistelmä</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Sosiaaliala + viestintä + kehittäminen + digiosaaminen samassa ihmisessä. En ole pelkkä markkinoija enkä pelkkä sosiaalialan ammattilainen.</div>
+      </div>
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#0A8F8F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="diff-title">Kyky sanoittaa monimutkaista</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Herkistä, laajoista ja teknisistäkin aiheista selkeää kohderyhmäviestintää. Lastensuojelu, neurodiversiteetti, muutosjohtaminen — kaikki puhuttavaksi sisällöksi.</div>
+      </div>
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#D4622A" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <span class="diff-title">Strateginen ja käytännönläheinen</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Ymmärrän asiakaspolkuja, tavoitteita ja konversioita. En tee vain sisältöjä — rakennan kokonaisuuksia, jotka toimivat.</div>
+      </div>
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#C44527" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="diff-title">Ihmislähtöinen ymmärrys</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Sosiaalipsykologia, neuropsykiatria ja sosiaalialan arki pohjana. Ymmärrän ihmisten käyttäytymistä syvemmin kuin tavallinen viestijä.</div>
+      </div>
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#6E5EF0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span class="diff-title">Itsenäinen kokonaisuuksien hallinta</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Useita rinnakkaisia projekteja ja brändejä. Toimin ilman käsikirjoitusta — tunnistan tarpeet, priorisoin ja vien maaliin.</div>
+      </div>
+
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#0A8F8F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span class="diff-title">Pienillä resursseilla isoihin tuloksiin</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">6,90 % LinkedIn-sitoutumisaste, 21 500 katselukertaa yhdessä videossa ilman mainontaa. Ei tarvita suurta budjettia — tarvitaan oikea osaaminen.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- YHTEYSTIEDOT -->
+<div class="contact-wrap" id="yhteystiedot">
+  <div class="contact-inner">
+    <img src="johanna-profiilikuva.svg" alt="Johanna Toppinen" class="contact-avatar">
+    <div class="section-label">Ota yhteyttä</div>
+    <h2 class="grad">Jutellaan lisää!</h2>
+    <p>Etä- tai hybridityö</p>
+    <a href="mailto:johanna.toppinen@gmail.com" class="contact-pill">Lähetä viesti</a>
+  </div>
+</div>
+
+<footer>© 2026 Johanna Toppinen. All rights reserved.</footer>
+
+<script>
+  function toggleDiff(el) {
+    el.classList.toggle('open');
+  }
+  function toggleNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('nav-links').classList.remove('open');
+  }
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav-links');
+    var btn = document.querySelector('.hamburger');
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+</script>
+
+<div class="contact-bar">
+  <a href="mailto:johanna.toppinen@gmail.com" class="contact-bar-btn">Lähetä viesti</a>
+</div>
+</body>
+</html>

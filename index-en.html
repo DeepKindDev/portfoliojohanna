@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johanna Toppinen – Portfolio</title>
+<style>
+  :root {
+    --bg:#F5F5F7; --bg-card:#FFFFFF; --bg-dark:#1D1D1F; --text:#1D1D1F;
+    --muted:#6E6E73; --border:#D2D2D7; --terra:#C44527; --terra-h:#A8391F;
+    --purple:#6E5EF0; --teal:#0A8F8F; --orange:#D4622A; --rose:#B0347C;
+    --green:#2A9D6F;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:52px;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,245,247,0.92);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);height:52px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-size:1rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.25s;}
+  @media(max-width:640px){
+    .hamburger{display:flex;}
+    .nav-links{display:none;position:fixed;top:52px;left:0;right:0;background:rgba(245,245,247,0.98);border-bottom:1px solid var(--border);flex-direction:column;gap:0;padding:.5rem 0;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.85rem 2rem;font-size:1rem;border-bottom:1px solid var(--border);}
+    .nav-links a:last-child{border-bottom:none;}
+  }
+  .hero{max-width:860px;margin:0 auto;padding:9rem 2rem 5rem;display:flex;align-items:center;gap:4rem;}
+  .hero-text{flex:1;min-width:0;}
+  .hero-photo{flex-shrink:0;}
+  .hero-photo img{width:200px;height:200px;border-radius:50%;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.12);}
+  @media(max-width:680px){.hero{flex-direction:column-reverse;gap:2rem;padding-top:7rem;}.hero-photo img{width:140px;height:140px;}}
+  .hero-eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:1.25rem;}
+  h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;letter-spacing:-0.04em;line-height:1.06;color:var(--text);margin-bottom:1.25rem;}
+  .hero-sub{font-size:clamp(1rem,2.2vw,1.18rem);color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:2.5rem;}
+  .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem;}
+  .btn{display:inline-flex;align-items:center;gap:.35rem;padding:.65rem 1.35rem;border-radius:980px;font-size:.875rem;font-weight:600;text-decoration:none;transition:all .2s;}
+  .btn-terra{background:var(--terra);color:#fff;}
+  .btn-terra:hover{background:var(--terra-h);}
+  .btn-outline{border:1.5px solid var(--border);color:var(--text);background:transparent;}
+  .btn-outline:hover{border-color:var(--terra);color:var(--terra);}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+  .tag{padding:.25rem .75rem;border-radius:999px;border:1px solid var(--border);font-size:.775rem;color:var(--muted);background:var(--bg-card);}
+  .grad{background:linear-gradient(90deg,#C44527 0%,#6E5EF0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  section{padding:5rem 2rem;}
+  .section-inner{max-width:860px;margin:0 auto;}
+  .section-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:.6rem;}
+  h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem;}
+  .section-desc{color:var(--muted);font-size:clamp(1rem,1.8vw,1.1rem);max-width:520px;margin-bottom:2.5rem;line-height:1.7;}
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+  @media(max-width:750px){.pillars{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.pillars{grid-template-columns:1fr;}}
+  .pillar{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2rem 1.75rem 1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden;}
+  .pillar:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.10);}
+  .pillar-stripe{position:absolute;top:0;left:0;right:0;height:4px;border-radius:18px 18px 0 0;}
+  .pillar.p-social .pillar-stripe{background:var(--teal);}
+  .pillar.p-marketing .pillar-stripe{background:var(--purple);}
+  .pillar.p-dev .pillar-stripe{background:var(--orange);}
+  .pillar.p-tools .pillar-stripe{background:var(--green);}
+  .pillar-icon{font-size:2rem;margin-bottom:.85rem;margin-top:.25rem;}
+  .pillar-title{font-size:clamp(1.05rem,2vw,1.2rem);font-weight:700;margin-bottom:0;flex:1;}
+  .pillar.p-social .pillar-title{color:var(--teal);}
+  .pillar.p-marketing .pillar-title{color:var(--purple);}
+  .pillar.p-dev .pillar-title{color:var(--orange);}
+  .pillar.p-tools .pillar-title{color:var(--green);}
+  .pillar-arrow{align-self:flex-end;margin-top:1.25rem;width:36px;height:36px;border-radius:50%;flex-shrink:0;background:#1D1D1F;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+  .pillar-arrow svg{width:18px;height:18px;stroke:#fff;}
+  .pillar:hover .pillar-arrow{background:var(--terra);transform:scale(1.08);}
+  .diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+  .diff{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;cursor:pointer;transition:box-shadow .2s,border-color .2s;}
+  .diff:hover{border-color:var(--terra);}
+  .diff.open{box-shadow:0 4px 20px rgba(0,0,0,0.07);}
+  .diff-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .diff-header-left{display:flex;align-items:center;gap:.85rem;}
+  .diff-icon{width:30px;height:30px;flex-shrink:0;}
+  .diff-title{font-size:.95rem;font-weight:600;}
+  .diff-chevron{width:22px;height:22px;flex-shrink:0;color:var(--muted);transition:transform .25s;}
+  .diff.open .diff-chevron{transform:rotate(180deg);color:var(--terra);}
+  .diff-body{display:none;font-size:.83rem;color:var(--muted);line-height:1.6;padding-top:.85rem;margin-top:.85rem;border-top:1px solid var(--border);}
+  .diff.open .diff-body{display:block;}
+  hr{border:none;border-top:1px solid var(--border);}
+  .contact-wrap{background:var(--bg-card);border-top:1px solid var(--border);padding:5rem 2rem;text-align:center;}
+  .contact-inner{max-width:440px;margin:0 auto;}
+  .contact-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 1.25rem;display:block;box-shadow:0 4px 16px rgba(0,0,0,0.10);}
+  .contact-inner h2{margin-bottom:.75rem;}
+  .contact-inner p{color:var(--muted);margin-bottom:2rem;font-size:.95rem;line-height:1.7;}
+  .contact-pill{display:inline-block;background:var(--terra);color:#fff;padding:.7rem 1.6rem;border-radius:980px;text-decoration:none;font-size:.9rem;font-weight:600;transition:background .2s;}
+  .contact-pill:hover{background:var(--terra-h);}
+  footer{background:var(--bg);border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center;font-size:.78rem;color:var(--muted);}
+
+  /* ── STICKY CONTACT BAR ── */
+  .contact-bar {
+    position:fixed; bottom:0; left:0; right:0; z-index:200;
+    background:rgba(245,245,247,0.96); backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+    height:52px; padding:0 2rem;
+    display:flex; align-items:center; justify-content:flex-end;
+  }
+  .contact-bar-btn {
+    background:var(--terra); color:#fff;
+    padding:.5rem 1.25rem; border-radius:980px;
+    text-decoration:none; font-size:.875rem; font-weight:600; transition:background .2s;
+  }
+  .contact-bar-btn:hover { background:var(--terra-h); }
+  .lang-switch { display:flex; align-items:center; gap:.4rem; font-size:.8rem; }
+  .lang-on { font-weight:700; color:var(--text); }
+  .lang-sep { color:var(--muted); }
+  .lang-off { color:var(--muted); text-decoration:none; transition:color .2s; }
+  .lang-off:hover { color:var(--terra); }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index-en.html">Johanna Toppinen</a>
+  <div class="nav-links" id="nav-links">
+    <a href="#expertise" onclick="closeNav()">Expertise</a>
+    <a href="#strengths" onclick="closeNav()">Strengths</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div class="lang-switch"><a class="lang-off" href="index.html">FI</a><span class="lang-sep"> | </span><span class="lang-on">EN</span></div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Communications · Development · Social Services</div>
+    <h1 class="grad">Johanna<br>Toppinen</h1>
+    <p class="hero-sub">
+      I understand people, services, and systems — I see opportunities in challenges and can communicate complex ideas clearly to the right audiences.
+    </p>
+    <div class="cta-row">
+      <a href="#expertise" class="btn btn-terra">Explore my expertise</a>
+      <a href="mailto:johanna.toppinen@gmail.com" class="btn btn-outline">Send a message</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Communications Specialist</span>
+      <span class="tag">Content Strategist</span>
+      <span class="tag">Development Specialist</span>
+      <span class="tag">Training Designer</span>
+      <span class="tag">NGO Communications</span>
+      <span class="tag">Social Services</span>
+      <span class="tag">Neuropsychiatric Coach</span>
+      <span class="tag">Social Psychology</span>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="johanna-profiilikuva.svg" alt="Johanna Toppinen">
+  </div>
+</div>
+
+<section id="expertise">
+  <div class="section-inner">
+    <div class="section-label">Areas of Expertise</div>
+    <h2 class="grad">What I do — and what I've achieved</h2>
+    <p class="section-desc">Click an area to explore.</p>
+    <div class="pillars">
+      <a href="marketing-en.html" class="pillar p-marketing">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">📣</div>
+        <div class="pillar-title">Marketing &amp; Communications</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+      <a href="development-en.html" class="pillar p-dev">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">🔧</div>
+        <div class="pillar-title">Development</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+      <a href="social-en.html" class="pillar p-social">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-title">Social Services &amp; Client Work</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+      <a href="tools-en.html" class="pillar p-tools">
+        <div class="pillar-stripe"></div>
+        <div class="pillar-icon">💻</div>
+        <div class="pillar-title">Digital Skills</div>
+        <span class="pillar-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="strengths" style="background:var(--bg-card);">
+  <div class="section-inner">
+    <div class="section-label">Strengths</div>
+    <h2 class="grad">Why me?</h2>
+    <p class="section-desc">A combination of skills that's hard to find ready-made.</p>
+    <div class="diff-grid">
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#6E5EF0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span class="diff-title">A rare combination</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Social services + communications + development + digital skills — all in one person. I'm neither just a marketer nor just a social services professional.</div>
+      </div>
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#0A8F8F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="diff-title">Articulating complexity</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Clear, targeted communication on sensitive, broad, and technical topics. Child welfare, neurodiversity, change leadership — all turned into compelling content.</div>
+      </div>
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#D4622A" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <span class="diff-title">Strategic and hands-on</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">I understand customer journeys, goals, and conversions. I don't just create content — I build systems that work.</div>
+      </div>
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#C44527" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="diff-title">Human-centred understanding</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Grounded in social psychology, neuropsychiatry, and social services practice. I understand human behaviour more deeply than a typical communications professional.</div>
+      </div>
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#6E5EF0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span class="diff-title">Independent ownership</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">Multiple parallel projects and brands. I work without hand-holding — I identify needs, prioritise, and deliver.</div>
+      </div>
+      <div class="diff" onclick="toggleDiff(this)">
+        <div class="diff-header">
+          <div class="diff-header-left">
+            <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#0A8F8F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span class="diff-title">Big results, limited resources</span>
+          </div>
+          <svg class="diff-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="diff-body">6.90% LinkedIn engagement rate. 21,500 views on a single organic video. No big budget needed — just the right expertise.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <img src="johanna-profiilikuva.svg" alt="Johanna Toppinen" class="contact-avatar">
+    <div class="section-label">Get in touch</div>
+    <h2 class="grad">Let's talk!</h2>
+    <p>Remote or hybrid work</p>
+    <a href="mailto:johanna.toppinen@gmail.com" class="contact-pill">Send a message</a>
+  </div>
+</div>
+
+<footer>© 2026 Johanna Toppinen. All rights reserved.</footer>
+
+<div class="contact-bar">
+  <a href="mailto:johanna.toppinen@gmail.com" class="contact-bar-btn">Send a message</a>
+</div>
+
+<script>
+  function toggleDiff(el){el.classList.toggle('open');}
+  function toggleNav(){document.getElementById('nav-links').classList.toggle('open');}
+  function closeNav(){document.getElementById('nav-links').classList.remove('open');}
+  document.addEventListener('click',function(e){
+    var nav=document.getElementById('nav-links');
+    var btn=document.querySelector('.hamburger');
+    if(!nav.contains(e.target)&&!btn.contains(e.target)){nav.classList.remove('open');}
+  });
+</script>
+</body>
+</html>
