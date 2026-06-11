@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRLXXWG12B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XRLXXWG12B');
-</script>
 <meta charset="UTF-8">
 <meta name="description" content="Johanna Toppisen sosiaalialan ja asiakastyön osaaminen: varhaiskasvatus, lastensuojelu, neuropsykiatrinen valmennus ja terapeuttinen tukikeskustelu.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,6 +116,46 @@
   }
 }
 </script>
+
+<style id="jt-consent-css">
+  #jt-cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
+    background: rgba(245,245,247,0.97);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #D2D2D7;
+    padding: .9rem 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  }
+  .jt-cb-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .jt-cb-text {
+    flex: 1; font-size: .8rem; color: #6E6E73;
+    margin: 0; line-height: 1.55; min-width: 220px;
+  }
+  .jt-cb-text a { color: #C44527; text-decoration: none; }
+  .jt-cb-text a:hover { text-decoration: underline; }
+  .jt-cb-btns { display: flex; gap: .5rem; flex-shrink: 0; }
+  .jt-btn-pri {
+    background: #C44527; color: #fff; border: none;
+    padding: .42rem 1.1rem; border-radius: 980px;
+    font-size: .8rem; font-weight: 600; cursor: pointer; transition: background .2s;
+  }
+  .jt-btn-pri:hover { background: #a8391f; }
+  .jt-btn-sec {
+    background: transparent; color: #6E6E73;
+    border: 1px solid #D2D2D7;
+    padding: .42rem 1.1rem; border-radius: 980px;
+    font-size: .8rem; font-weight: 500; cursor: pointer; transition: all .2s;
+  }
+  .jt-btn-sec:hover { border-color: #6E6E73; color: #1D1D1F; }
+  @media (max-width: 580px) {
+    #jt-cookie-banner { padding: .8rem 1.2rem; }
+    .jt-cb-inner { gap: .75rem; }
+    .jt-cb-btns { width: 100%; justify-content: flex-end; }
+  }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Siirry sisältöön</a>
@@ -297,5 +329,74 @@
 <div class="contact-bar">
   <a href="mailto:johanna.toppinen@gmail.com" class="contact-bar-btn">Lähetä viesti</a>
 </div>
+
+<script>
+(function() {
+  var GA_ID = 'G-XRLXXWG12B';
+  var KEY = 'jt_cookie_consent';
+  var lang = document.documentElement.lang === 'en' ? 'en' : 'fi';
+
+  function loadGA() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  function remove() {
+    var b = document.getElementById('jt-cookie-banner');
+    if (b) b.remove();
+  }
+
+  var stored = localStorage.getItem(KEY);
+  if (stored === 'accepted') { loadGA(); return; }
+  if (stored === 'declined') { return; }
+
+  // Build banner
+  var texts = {
+    fi: {
+      msg: '🍪 Haluan tietää onko tämä portfolio löydetty. Google Analytics seuraa käyntitilastoja — ei henkilötietoja, ei salakuuntelua, vain numeroita.',
+      link: 'Googlen tietosuoja',
+      accept: '😊 Selvä, sopii minulle',
+      decline: '🥷 En jätä jälkiä'
+    },
+    en: {
+      msg: '🍪 I want to know if this portfolio is being found. Google Analytics tracks visit statistics — no personal data, no surveillance, just numbers.',
+      link: 'Google Privacy Policy',
+      accept: '😊 Sure, that works for me',
+      decline: '🥷 I leave no trace'
+    }
+  };
+  var t = texts[lang];
+
+  var banner = document.createElement('div');
+  banner.id = 'jt-cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', lang === 'fi' ? 'Evästeilmoitus' : 'Cookie notice');
+  banner.innerHTML =
+    '<div class="jt-cb-inner">' +
+      '<p class="jt-cb-text">' + t.msg + ' <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">' + t.link + '</a></p>' +
+      '<div class="jt-cb-btns">' +
+        '<button class="jt-btn-sec" id="jt-cb-decline">' + t.decline + '</button>' +
+        '<button class="jt-btn-pri" id="jt-cb-accept">' + t.accept + '</button>' +
+      '</div>' +
+    '</div>';
+
+  document.body.appendChild(banner);
+
+  document.getElementById('jt-cb-accept').addEventListener('click', function() {
+    localStorage.setItem(KEY, 'accepted');
+    remove(); loadGA();
+  });
+  document.getElementById('jt-cb-decline').addEventListener('click', function() {
+    localStorage.setItem(KEY, 'declined');
+    remove();
+  });
+})();
+</script>
 </body>
 </html>
