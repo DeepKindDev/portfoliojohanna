@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRLXXWG12B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XRLXXWG12B');
+</script>
+<meta charset="UTF-8">
+<meta name="description" content="Markkinoinnin ja viestinnän asiantuntija: some, uutiskirjeet, verkkosisällöt, kampanjat ja digitaaliset järjestelmät.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markkinointi & viestintä – Johanna Toppinen</title>
+<style>
+  :root {
+    --bg:#F5F5F7; --bg-card:#FFFFFF; --text:#1D1D1F; --muted:#6E6E73; --border:#D2D2D7;
+    --terra:#C44527; --terra-h:#A8391F; --purple:#6E5EF0; --teal:#0A8F8F; --orange:#D4622A;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--font); background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(245,245,247,.92); backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border); height:52px; padding:0 2rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { font-size:1rem; font-weight:600; color:var(--text); text-decoration:none; }
+  .nav-back { color:var(--muted); text-decoration:none; font-size:.875rem; transition:color .2s; display:flex; align-items:center; gap:.3rem; }
+  .nav-back:hover { color:var(--terra); }
+  .page { max-width:860px; margin:0 auto; padding:6rem 2rem 4rem; }
+  .page-eyebrow { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:.6rem; }
+  h1 { font-size:clamp(2rem,5vw,2.8rem); font-weight:700; letter-spacing:-.03em; margin-bottom:1rem; background:linear-gradient(90deg,#6E5EF0 0%,#B0347C 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .page-lead { font-size:1.05rem; color:var(--muted); max-width:580px; line-height:1.75; margin-bottom:3rem; }
+  hr { border:none; border-top:1px solid var(--border); margin:3rem 0; }
+  h2 { font-size:1.3rem; font-weight:700; letter-spacing:-.02em; margin-bottom:1rem; }
+  p { color:var(--muted); font-size:.93rem; line-height:1.7; margin-bottom:1rem; }
+  p strong { color:var(--text); }
+  p:last-child { margin-bottom:0; }
+
+  .metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:.5rem; }
+  @media (max-width:700px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px) { .metric-grid { grid-template-columns:1fr; } }
+  .metric-note { font-size:.72rem; color:var(--muted); margin-bottom:2.5rem; }
+  .metric { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.25rem; }
+  .metric-num { font-size:1.8rem; font-weight:700; letter-spacing:-.03em; color:var(--purple); }
+  .metric-num.t { color:var(--teal); }
+  .metric-num.o { color:var(--orange); }
+  .metric-label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+  .metric-bench { font-size:.7rem; color:var(--purple); margin-top:.15rem; font-weight:500; }
+  .metric-bench.t { color:var(--teal); }
+
+  .co { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:1.75rem; margin-bottom:1rem; }
+  .co-name { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1.25rem; }
+  .co.teal .co-name { color:var(--teal); }
+  .ch { display:flex; gap:1rem; padding:.85rem 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+  .ch:last-child { border-bottom:none; padding-bottom:0; }
+  .ch-badge-col { flex-shrink:0; width:110px; padding-top:.1rem; }
+  .ch-content { flex:1; min-width:0; }
+  .badge { display:inline-block; padding:.18rem .55rem; border-radius:999px; font-size:.68rem; font-weight:600; white-space:nowrap; }
+  .badge-g { background:rgba(10,143,143,.1); color:var(--teal); }
+  .badge-p { background:rgba(110,94,240,.1); color:var(--purple); }
+  .ch-title { font-size:.9rem; font-weight:600; margin-bottom:.2rem; }
+  .ch-text { font-size:.83rem; color:var(--muted); line-height:1.55; margin-bottom:.2rem; }
+  .ch-stat { font-size:.77rem; color:var(--purple); font-weight:500; }
+  .co.teal .ch-stat { color:var(--teal); }
+
+  .tools { display:flex; flex-wrap:wrap; gap:.4rem; }
+  .tool { padding:.28rem .65rem; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; font-size:.78rem; color:var(--muted); }
+
+  /* ── TYÖNÄYTTEET ─────────────────────────────── */
+  .samples-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; margin-bottom:.35rem; }
+  .samples-label.p { color:var(--purple); }
+  .samples-label.t { color:var(--teal); }
+  .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-top:1.25rem; margin-bottom:0; }
+  @media (max-width:580px) { .gallery { grid-template-columns:repeat(2,1fr); } }
+  .gitem { border-radius:12px; overflow:hidden; background:var(--bg-card); border:1px solid var(--border); transition:box-shadow .2s; }
+  .gitem:hover { box-shadow:0 8px 28px rgba(0,0,0,0.09); }
+  .gitem img {
+    width:100%; display:block;
+    aspect-ratio:4/3; object-fit:contain;
+    background:#EBEBED; padding:.5rem;
+  }
+  .gitem video {
+    width:100%; display:block;
+    aspect-ratio:4/3; background:#1D1D1F;
+  }
+  .gcap { font-size:.72rem; color:var(--muted); padding:.5rem .75rem .65rem; line-height:1.4; }
+
+  footer { text-align:center; padding:2rem; font-size:.78rem; color:var(--muted); border-top:1px solid var(--border); margin-top:4rem; }
+
+  /* ── STICKY CONTACT BAR ── */
+  .contact-bar {
+    position:fixed; bottom:0; left:0; right:0; z-index:200;
+    background:rgba(245,245,247,0.96); backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+    height:52px; padding:0 2rem;
+    display:flex; align-items:center; justify-content:flex-end;
+  }
+  .contact-bar-btn {
+    background:var(--terra); color:#fff;
+    padding:.5rem 1.25rem; border-radius:980px;
+    text-decoration:none; font-size:.875rem; font-weight:600; transition:background .2s;
+  }
+  .contact-bar-btn:hover { background:var(--terra-h); }
+  /* ── LANG TOGGLE ── */
+  .lang-switch { display:flex; align-items:center; gap:.4rem; font-size:.8rem; }
+  .lang-on { font-weight:700; color:var(--text); }
+  .lang-sep { color:var(--muted); }
+  .lang-off { color:var(--muted); text-decoration:none; transition:color .2s; }
+  .lang-off:hover { color:var(--terra); }
+  body { padding-bottom:52px; }
+</style>
+<style>
+  .skip-link { position:absolute; top:-40px; left:0; background:var(--terra); color:#fff; padding:.5rem 1rem; z-index:999; text-decoration:none; font-size:.875rem; border-radius:0 0 8px 0; transition:top .2s; }
+  .skip-link:focus { top:0; }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Siirry sisältöön</a>
+<nav>
+  <a class="nav-logo" href="index.html">Johanna Toppinen</a>
+  <div class="nav-center" style="display:flex;gap:1.5rem;">
+    <a href="index.html#osaamisalueet" style="color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Osaamisalueet</a>
+    <a href="index.html#erottautuminen" style="color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Vahvuudet</a>
+    <a href="index.html#yhteystiedot" style="color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Minusta</a>
+    <a href="index.html#yhteystiedot" style="color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Minusta</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.25rem;"><div class="lang-switch"><span class="lang-on">FI</span><span class="lang-sep"> | </span><a class="lang-off" href="marketing-en.html">EN</a></div><a class="nav-back" href="index.html">← Etusivu</a></div>
+</nav>
+<main id="main-content">
+<div class="page">
+  <div class="page-eyebrow">Osaamisalue</div>
+  <h1>Markkinointi &amp; viestintä</h1>
+  <p class="page-lead">
+    Vastasin kahden yrityksen koko digitaalisesta viestinnästä: suunnittelu, toteutus, mittaaminen — 7 somekanavaa, 2 uutiskirjelistaa,
+    webinaarien tuottaminen ja markkinointi, verkkosivusisällöt, esitteet ja asiakaspolut —
+    muiden työtehtävien ohessa. Viimeisen vuoden ajan yhden hengen tiimillä.
+    Useissa mittareissa tulokset ylittävät alan vertailuarvot.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-num">6,90&thinsp;%</div>
+      <div class="metric-label">LinkedIn-sitoutumisaste (Toisintekijät)</div>
+      <div class="metric-bench">Alan ka. 2–4 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num t">21&nbsp;500</div>
+      <div class="metric-label">Katselukertaa yhdessä informatiivisessa ja tekstipohjaisessa TikTok-julkaisussa (Elämän Huoltamo)</div>
+      <div class="metric-bench t">Sote-alalla harvinainen</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">4,83&thinsp;%</div>
+      <div class="metric-label">Sähköpostin klikkausprosentti (Toisintekijät)</div>
+      <div class="metric-bench">Alan ka. 2–4 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num o">26,3&thinsp;%</div>
+      <div class="metric-label">Sähköpostin avausprosentti (Elämän Huoltamo)</div>
+      <div class="metric-bench">Alan ka. 20–25 %</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num t">5&nbsp;100+</div>
+      <div class="metric-label">Uutiskirjeen tilaajat yhteensä</div>
+      <div class="metric-bench t">Kahdelle brändille</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">11,2&thinsp;%</div>
+      <div class="metric-label">Instagram-sitoutumisaste (Toisintekijät)</div>
+      <div class="metric-bench">B2B-ka. 3–8 %</div>
+    </div>
+  </div>
+  <p class="metric-note">Tarkastelujakso tämän sivun kaikissa tuloksissa 28.5.2025–28.5.2026</p>
+
+  <hr>
+  <h2>Toisintekijät Oy — yritysvalmennus &amp; koulutus</h2>
+  <p>B2B-koulutustalo. Kohderyhmä: HR-päättäjät, esihenkilöt, kehittämisasiantuntijat.</p>
+  <div class="co">
+    <div class="co-name">Toisintekijät Oy · Kanavat</div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">⭐ Erinomainen</span></div>
+      <div class="ch-content">
+        <div class="ch-title">LinkedIn</div>
+        <p class="ch-text">128 julkaisua (2–3/vko), johdonmukainen tahti koko vuosi. 16 634 näyttökertaa. <strong>6,90 % sitoutumisaste</strong> — yli kaksinkertainen alan normaaliin nähden.</p>
+        <div class="ch-stat">↗ 3,4 % klikkausprosentti kaikista näyttökerroista</div>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">✅ Vahva</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Sähköposti (Mailchimp)</div>
+        <p class="ch-text">3 188 tilaajaa, kasvu +6,94 %. <strong>208 uutta tilaajaa 90 päivässä.</strong> Klikkausprosentti 4,83 % (+13 %) — B2B-koulutusalan yläkvartiilin tasoa.</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-p">✅ Kasvussa</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Instagram</div>
+        <p class="ch-text">33 300 näyttökertaa. Vuorovaikutukset ja seuraajat <strong>molemmat kaksinkertaistuivat (+100 %).</strong> Sitoutumisaste 11,2 %.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h2>Elämän Huoltamo Oy — lastensuojelun avopalvelut</h2>
+  <p>Sote-alan palveluntarjoaja. Kohderyhmä: perheet, vanhemmat, sosiaali- ja kasvatusalan ammattilaiset.</p>
+  <div class="co teal">
+    <div class="co-name">Elämän Huoltamo Oy · Kanavat</div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">⭐ Erinomainen</span></div>
+      <div class="ch-content">
+        <div class="ch-title">TikTok</div>
+        <p class="ch-text">276 seuraajaa (kanava rakennusvaiheessa). <strong>59 000+ katselukertaa</strong> ilman maksettua mainontaa. Suosituin julkaisu: 21 500 katselukertaa. Yleisö: 67,5 % naisia, suurin ikäryhmä 45–54 v., 73 % Suomesta.</p>
+        <div class="ch-stat">↗ Informatiivisella tekstipohjaisella sisällöllä — sote-alalla poikkeuksellinen</div>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Hyvä</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Facebook</div>
+        <p class="ch-text"><strong>138 700 orgaanista näyttökertaa</strong> vuodessa. +134 uutta seuraajaa (+362 %).</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Kasvussa</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Instagram</div>
+        <p class="ch-text">56 500 näyttökertaa. Vuorovaikutukset kaksinkertaistuivat. Sitoutumisaste 3,2 %. 565 linkkiklikkausta.</p>
+      </div>
+    </div>
+    <div class="ch">
+      <div class="ch-badge-col"><span class="badge badge-g">✅ Laadukas</span></div>
+      <div class="ch-content">
+        <div class="ch-title">Sähköposti (Mailchimp)</div>
+        <p class="ch-text">1 989 tilaajaa. <strong>26,33 % avausprosentti</strong> (alan ka. 20–25 %). Erittäin pieni poistuma — lista rakennettu kestävästi.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div style="background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--purple); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2rem;">
+    <p style="margin:0; font-size:.93rem; color:var(--text);">Tällä volyymilla ja näillä tuloksilla työmäärä vastaa 2–3 henkilön tiimiä. Minua voi siis sanoa aikaansaavaksi.</p>
+  </div>
+
+  <h2>Työnäytteet</h2>
+
+  <div style="margin-bottom:2.5rem;">
+    <div class="samples-label p">Toisintekijät Oy</div>
+    <p>Webinaarit, verkkokurssit, liidimagneetit ja somemarkkinointi B2B-koulutustalolla.</p>
+    <div class="gallery">
+      <!-- Rivi 1 -->
+      <div class="gitem">
+        <img src="Toisintekijät webinaarit.JPG" alt="Webinaarien markkinointi">
+        <div class="gcap">Webinaarien tuottaminen ja editointi – liidilähde</div>
+      </div>
+      <div class="gitem">
+        <img src="Toisintekijät Instagram feed.png" alt="Instagram-syöte">
+        <div class="gcap">Instagram-syöte — visuaalinen ilme ja herättelevää viestintää</div>
+      </div>
+      <div class="gitem">
+        <video controls preload="metadata" onloadedmetadata="this.currentTime=2">
+          <source src="Toisintekijät Trauma osana elämäntarinaa-koulutus.MP4" type="video/mp4">
+        </video>
+        <div class="gcap">Sote-täydennyskoulutusten markkinointia</div>
+      </div>
+      <!-- Rivi 2 -->
+      <div class="gitem">
+        <img src="Toisintekijät NDT verkkokurssi.PNG" alt="NDT-verkkokurssi">
+        <div class="gcap">Verkkokurssien sisältö, pedagogiikka ja vaikuttavuuden mittaaminen</div>
+      </div>
+      <div class="gitem">
+        <img src="Toisintekijät Näin muotoilet neurodiversiteettiystävällisen työympäristön-opas.JPEG" alt="Liidimagneetti-opas">
+        <div class="gcap">Liidimagneetit ja ladattavat materiaalit</div>
+      </div>
+      <div class="gitem">
+        <img src="Toisintekijät Akatemia.png" alt="Toisintekijät Akatemia">
+        <div class="gcap">Toisintekijät Akatemia – kurssialustan hallinnointi ja kehittäminen</div>
+      </div>
+      <!-- Rivi 3 -->
+      <div class="gitem">
+        <img src="Toisintekijät Yaxan-esite.jpg" alt="Yaxan-esite" style="object-fit:cover; background:transparent; padding:0;">
+        <div class="gcap">Printtimateriaalit</div>
+      </div>
+      <div class="gitem">
+        <img src="Toisintekijät luentotallenne Kun kaikkia.PNG" alt="Luentotallenteet">
+        <div class="gcap">Luentotallenteet — editointi ja hyödyntäminen asiakaspoluissa</div>
+      </div>
+      <div class="gitem">
+        <img src="Toisintekijät uutiskirje.png" alt="Uutiskirje">
+        <div class="gcap">Sähköpostimarkkinointi – uutiskirjeet, kampanjat ja automaatiot</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="margin-bottom:2.5rem;">
+    <div class="samples-label t">Elämän Huoltamo Oy</div>
+    <p>Somekanavat, esitteet, mainokset, ohjeistukset ja printtimateriaalit lastensuojelun avopalveluiden tuottajalle.</p>
+    <div class="gallery">
+      <!-- Rivi 1 -->
+      <div class="gitem">
+        <img src="Elämän Huoltamo TikTokpostaus.png" alt="TikTok-sisältö">
+        <div class="gcap">Somekanavien strategia ja sisällöntuotanto</div>
+      </div>
+      <div class="gitem">
+        <img src="Elämän Huoltamo Instagram ruudukko.png" alt="Instagram-ruudukko">
+        <div class="gcap">Instagram-ruudukko — visuaalinen kokonaisuus</div>
+      </div>
+      <div class="gitem">
+        <video controls preload="metadata" onloadedmetadata="this.currentTime=1.5">
+          <source src="Elämän Huoltamo me autetaan video.MP4" type="video/mp4">
+        </video>
+        <div class="gcap">Brändiviestintää erottuvasti</div>
+      </div>
+      <!-- Rivi 2 -->
+      <div class="gitem">
+        <img src="Elämän Huoltamo Nepsy Perhe PLUS -verkkovalmennus.jpg" alt="Nepsy Perhe PLUS verkkovalmennus">
+        <div class="gcap">Asiantuntijasisältöä ja palvelumuotoilua osallistavan kehittämisen menetelmin</div>
+      </div>
+      <div class="gitem">
+        <img src="Elämän Huoltamo mainos.JPG" alt="Mainos">
+        <div class="gcap">Orgaanista ja maksettua mainontaa Meta + Google Ads</div>
+      </div>
+      <div class="gitem">
+        <img src="Elämän Huoltamo Nepsy Perhe PLUS flyeri.PNG" alt="Nepsy Perhe PLUS flyeri">
+        <div class="gcap">Flyerit, mainokset ja esitteet</div>
+      </div>
+      <!-- Rivi 3 -->
+      <div class="gitem">
+        <img src="Elämän Huoltamo Ohjevideoita intraan.PNG" alt="Ohjevideoita intraaneen">
+        <div class="gcap">Ohjevideoita intraan — sisäinen viestintä</div>
+      </div>
+      <div class="gitem">
+        <img src="Elämän Huoltamo Kirjallisia ohjeita intraan.png" alt="Kirjallisia ohjeita intraaneen">
+        <div class="gcap">Kirjallisia ohjeita intraan — sisäinen viestintä</div>
+      </div>
+      <div class="gitem">
+        <video controls preload="metadata" onloadedmetadata="this.currentTime=1.5">
+          <source src="Elämän Huoltamo Nepsy Perhe PLUS ilmoittautuminen on auki.MP4" type="video/mp4">
+        </video>
+        <div class="gcap">Videoviestintää ja mainoksia palveluista</div>
+      </div>
+      <!-- Rivi 4 -->
+      <div class="gitem">
+        <img src="Elämän Huoltamo Printtimateriaalit.jpg" alt="Printtimateriaalit">
+        <div class="gcap">Printtimateriaalit messuille ja tapahtumiin</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h2>Käytetyt työkalut</h2>
+  <div class="tools">
+    <span class="tool">Meta Business Suite</span>
+    <span class="tool">Meta Ads Manager</span>
+    <span class="tool">Meta Pixel</span>
+    <span class="tool">Google Analytics 4</span>
+    <span class="tool">Google Tag Manager</span>
+    <span class="tool">Mailchimp</span>
+    <span class="tool">Simplified</span>
+    <span class="tool">TikTok Creator Studio</span>
+    <span class="tool">Canva</span>
+    <span class="tool">DaVinci Resolve</span>
+    <span class="tool">CapCut / Edits</span>
+    <span class="tool">WordPress</span>
+  </div>
+</div>
+</main>
+<footer>
+  <a href="index.html" style="color:var(--terra);text-decoration:none;">← Etusivu</a>
+  &nbsp;·&nbsp; © 2026 Johanna Toppinen. All rights reserved.
+</footer>
+
+<div class="contact-bar">
+  <a href="mailto:johanna.toppinen@gmail.com" class="contact-bar-btn">Lähetä viesti</a>
+</div>
+</body>
+</html>
