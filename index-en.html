@@ -119,6 +119,14 @@
   .lang-sep { color:var(--muted); }
   .lang-off { color:var(--muted); text-decoration:none; transition:color .2s; }
   .lang-off:hover { color:var(--terra); }
+
+  /* ── TYÖKAVEREIDEN PALAUTE ── */
+  .quote-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:2rem; }
+  .quote { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.6rem 1.5rem 1.3rem; position:relative; }
+  .quote::before { content:"\201D"; position:absolute; top:.35rem; right:1.1rem; font-size:3.2rem; line-height:1; font-weight:700; color:var(--purple); opacity:.16; }
+  .quote:nth-child(2)::before { color:var(--teal); }
+  .quote:nth-child(3)::before { color:var(--orange); }
+  .quote blockquote { font-size:.9rem; color:var(--text); line-height:1.7; font-style:italic; border:none; margin:0; }
 </style>
 <script type="application/ld+json">
 {
@@ -350,6 +358,27 @@
         </div>
         <div class="diff-body">6.90% LinkedIn engagement rate. 21,500 views on a single organic video. No big budget needed — just the right expertise.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-label">Feedback</div>
+    <h2 class="grad">What colleagues have said</h2>
+    <div class="quote-grid">
+      <figure class="quote">
+        <blockquote>&ldquo;You're incredibly efficient, and your neurodiversity expertise is worth its weight in gold! When working with you, there's never a worry about whether something will get done &mdash; or how.&rdquo;</blockquote>
+      </figure>
+      <figure class="quote">
+        <blockquote>&ldquo;You're warm and harmonious, and always ready to help. You bring a sense of calm to everyone around you. Things move quickly from words to action.&rdquo;</blockquote>
+      </figure>
+      <figure class="quote">
+        <blockquote>&ldquo;You're a true team player who makes others shine too!&rdquo;</blockquote>
+      </figure>
     </div>
   </div>
 </section>

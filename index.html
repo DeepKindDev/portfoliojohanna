@@ -289,6 +289,14 @@
   .lang-off { color:var(--muted); text-decoration:none; transition:color .2s; }
   .lang-off:hover { color:var(--terra); }
   body { padding-bottom:52px; }
+
+  /* ── TYÖKAVEREIDEN PALAUTE ── */
+  .quote-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:2rem; }
+  .quote { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.6rem 1.5rem 1.3rem; position:relative; }
+  .quote::before { content:"\201D"; position:absolute; top:.35rem; right:1.1rem; font-size:3.2rem; line-height:1; font-weight:700; color:var(--purple); opacity:.16; }
+  .quote:nth-child(2)::before { color:var(--teal); }
+  .quote:nth-child(3)::before { color:var(--orange); }
+  .quote blockquote { font-size:.9rem; color:var(--text); line-height:1.7; font-style:italic; border:none; margin:0; }
 </style>
 <script type="application/ld+json">
 {
@@ -527,6 +535,27 @@
         <div class="diff-body">6,90 % LinkedIn-sitoutumisaste, 21 500 katselukertaa yhdessä videossa ilman mainontaa. Ei tarvita suurta budjettia — tarvitaan oikea osaaminen.</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- PALAUTE -->
+<section id="palaute">
+  <div class="section-inner">
+    <div class="section-label">Palaute</div>
+    <h2 class="grad">Mitä työkaverit ovat sanoneet</h2>
+    <div class="quote-grid">
+      <figure class="quote">
+        <blockquote>&rdquo;Oot huikean tehokas ja sun nepsyasiantuntemus on arvokasta kuin kulta! Sun kanssa kun tekee töitä, ei tarvitse huolehtia tuleeko homma hoidetuksi ja millä tavalla.&rdquo;</blockquote>
+      </figure>
+      <figure class="quote">
+        <blockquote>&rdquo;Olet lämmin ja harmoninen ja aina valmis auttamaan. Luot levollisuutta ympärillesi. Asiat hoituvat nopsasti tarinoista teoiksi.&rdquo;</blockquote>
+      </figure>
+      <figure class="quote">
+        <blockquote>&rdquo;Olet todellinen tiimipelaaja, joka saa toisetkin loistamaan!&rdquo;</blockquote>
+      </figure>
     </div>
   </div>
 </section>
