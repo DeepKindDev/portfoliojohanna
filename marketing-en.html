@@ -105,12 +105,7 @@
 
 <style>
   /* ── OSAAMISET ── */
-  .skill-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
-  .skill-cat { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
-  .skill-cat-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1rem; }
-  .skill-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
-  .stag { padding:.28rem .75rem; background:var(--bg); border:1px solid var(--border); border-radius:999px; font-size:.82rem; color:var(--text); line-height:1.4; }
-  .stag-ai { background:rgba(110,94,240,.07); border-color:rgba(110,94,240,.3); color:var(--purple); font-style:italic; }
+  
 </style>
 <style id="jt-consent-css">
   #jt-cookie-banner {
@@ -150,6 +145,17 @@
     .jt-cb-inner { gap: .75rem; }
     .jt-cb-btns { width: 100%; justify-content: flex-end; }
   }
+</style>
+<style>
+  /* ── SKILL GRID (cat-style) ── */
+  .cat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
+  .cat { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
+  .cat-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1rem; }
+  .tool-row { display:flex; align-items:flex-start; padding:.4rem 0; border-bottom:1px solid #F0F0F2; font-size:.88rem; gap:.75rem; }
+  .tool-row:last-child { border-bottom:none; padding-bottom:0; }
+  .tool-dot { width:6px; height:6px; border-radius:50%; background:var(--purple); flex-shrink:0; margin-top:.45rem; }
+  .tool-name { color:var(--text); line-height:1.45; }
+  .tool-name.ai { color:var(--purple); font-style:italic; }
 </style>
 </head>
 <body>
@@ -209,58 +215,46 @@
   <hr>
   <h2>What I handle in practice</h2>
 
-  <div class="skill-grid">
-    <div class="skill-cat">
-      <div class="skill-cat-label">Strategy &amp; Planning</div>
-      <div class="skill-tags">
-        <span class="stag">Marketing strategy and campaign planning</span>
-        <span class="stag">Target audience analysis and segmentation</span>
-        <span class="stag">Customer journey mapping</span>
-        <span class="stag">Project management</span>
-      </div>
+    <div class="cat-grid">
+    <div class="cat">
+      <div class="cat-label">Strategy &amp; planning</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Marketing strategy and campaign planning</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Target audience analysis and segmentation</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Customer journey mapping</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Project management</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Content Production</div>
-      <div class="skill-tags">
-        <span class="stag">Multi-channel content production</span>
-        <span class="stag">Blog posts and website content</span>
-        <span class="stag">SEO optimisation</span>
-        <span class="stag">Lead magnets and downloadable materials</span>
-        <span class="stag">Accessibility</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Content production</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Multi-channel content production</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Blog posts and website content</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">SEO optimisation</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Lead magnets and downloadable materials</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Accessibility</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Channels &amp; Campaigns</div>
-      <div class="skill-tags">
-        <span class="stag">Email marketing, automation and segmentation</span>
-        <span class="stag">Social media strategy and content (LinkedIn, Instagram, Facebook, TikTok)</span>
-        <span class="stag">Paid advertising — Meta Ads &amp; Google Ads</span>
-        <span class="stag">Webinar production and marketing</span>
-        <span class="stag">Multi-channel customer communications</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Channels &amp; campaigns</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Email marketing, automations and segmentation</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Social media strategy and content (LinkedIn, Instagram, Facebook, TikTok)</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Paid advertising — Meta Ads &amp; Google Ads</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Webinar production and promotion</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Multi-channel customer communication</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Learning Platforms &amp; Online Training</div>
-      <div class="skill-tags">
-        <span class="stag">Learning management system (LMS) administration and development</span>
-        <span class="stag">Online course design, pedagogy and content production</span>
-        <span class="stag">Learning materials production</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Learning platforms &amp; online training</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Online course platform maintenance and development</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Pedagogical design and content production for online courses</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Learning material production</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Creative Production</div>
-      <div class="skill-tags">
-        <span class="stag">Photography and videography</span>
-        <span class="stag">Image editing and video editing</span>
-        <span class="stag">Layout design, brochures and print materials</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Creative production</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Photography and video production</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Image editing and video editing</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Layout, brochures and print materials</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Measurement &amp; Development</div>
-      <div class="skill-tags">
-        <span class="stag">Analytics and performance tracking</span>
-        <span class="stag stag-ai">AI across the whole workflow — from strategy and content production to analytics</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Measurement &amp; development</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Analytics and results tracking</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name ai">Using AI throughout the process — from planning to content production and analytics</span></div>
     </div>
   </div>
 

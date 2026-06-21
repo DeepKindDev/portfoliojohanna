@@ -179,13 +179,15 @@
 </style>
 
 <style>
-  /* ── SKILL GRID ── */
-  .skill-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
-  .skill-cat { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
-  .skill-cat-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1rem; }
-  .skill-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
-  .stag { padding:.28rem .75rem; background:var(--bg); border:1px solid var(--border); border-radius:999px; font-size:.82rem; color:var(--text); line-height:1.4; }
-  .stag-ai { background:rgba(110,94,240,.07); border-color:rgba(110,94,240,.3); color:var(--purple); font-style:italic; }
+  /* ── SKILL GRID (cat-style) ── */
+  .cat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
+  .cat { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
+  .cat-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1rem; }
+  .tool-row { display:flex; align-items:flex-start; padding:.4rem 0; border-bottom:1px solid #F0F0F2; font-size:.88rem; gap:.75rem; }
+  .tool-row:last-child { border-bottom:none; padding-bottom:0; }
+  .tool-dot { width:6px; height:6px; border-radius:50%; background:var(--purple); flex-shrink:0; margin-top:.45rem; }
+  .tool-name { color:var(--text); line-height:1.45; }
+  .tool-name.ai { color:var(--purple); font-style:italic; }
 </style>
 </head>
 <body>
@@ -248,58 +250,46 @@
   <hr>
   <h2>Mitä hoidan käytännössä</h2>
 
-  <div class="skill-grid">
-    <div class="skill-cat">
-      <div class="skill-cat-label">Strategia ja suunnittelu</div>
-      <div class="skill-tags">
-        <span class="stag">Markkinointistrategia ja kampanjasuunnittelu</span>
-        <span class="stag">Kohderyhmäanalyysi ja segmentointi</span>
-        <span class="stag">Asiakaspolkujen suunnittelu</span>
-        <span class="stag">Projektinhallinta</span>
-      </div>
+    <div class="cat-grid">
+    <div class="cat">
+      <div class="cat-label">Strategia ja suunnittelu</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Markkinointistrategia ja kampanjasuunnittelu</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Kohderyhmäanalyysi ja segmentointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Asiakaspolkujen suunnittelu</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Projektinhallinta</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Sisällöntuotanto</div>
-      <div class="skill-tags">
-        <span class="stag">Monikanavainen sisällöntuotanto</span>
-        <span class="stag">Blogit ja verkkosivusisällöt</span>
-        <span class="stag">SEO-optimointi</span>
-        <span class="stag">Liidimagneettien ja latausmateriaalien suunnittelu</span>
-        <span class="stag">Saavutettavuus</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Sisällöntuotanto</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Monikanavainen sisällöntuotanto</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Blogit ja verkkosivusisällöt</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">SEO-optimointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Liidimagneettien ja latausmateriaalien suunnittelu</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Saavutettavuus</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Kanavat ja kampanjat</div>
-      <div class="skill-tags">
-        <span class="stag">Sähköpostimarkkinointi, automaatiot ja segmentointi</span>
-        <span class="stag">Some-strategia ja sisällöntuotanto (LinkedIn, Instagram, Facebook, TikTok)</span>
-        <span class="stag">Maksettu mainonta — Meta Ads &amp; Google Ads</span>
-        <span class="stag">Webinaarien tuottaminen ja markkinointi</span>
-        <span class="stag">Monikanavainen asiakasviestintä</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Kanavat ja kampanjat</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Sähköpostimarkkinointi, automaatiot ja segmentointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Some-strategia ja sisällöntuotanto (LinkedIn, Instagram, Facebook, TikTok)</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Maksettu mainonta — Meta Ads &amp; Google Ads</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Webinaarien tuottaminen ja markkinointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Monikanavainen asiakasviestintä</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Oppimisalustat ja verkkokoulutus</div>
-      <div class="skill-tags">
-        <span class="stag">Verkkokurssialustan ylläpito ja kehittäminen</span>
-        <span class="stag">Verkkokurssien pedagoginen suunnittelu ja sisällöntuotanto</span>
-        <span class="stag">Oppimismateriaalien tuottaminen</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Oppimisalustat ja verkkokoulutus</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Verkkokurssialustan ylläpito ja kehittäminen</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Verkkokurssien pedagoginen suunnittelu ja sisällöntuotanto</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Oppimismateriaalien tuottaminen</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Luova tuotanto</div>
-      <div class="skill-tags">
-        <span class="stag">Kuvaaminen ja videointi</span>
-        <span class="stag">Kuvankäsittely ja editointi</span>
-        <span class="stag">Taittaminen, esitteet ja printtimateriaalit</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Luova tuotanto</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Kuvaaminen ja videointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Kuvankäsittely ja editointi</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Taittaminen, esitteet ja printtimateriaalit</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-label">Mittaaminen ja kehittäminen</div>
-      <div class="skill-tags">
-        <span class="stag">Analytiikka ja tulosten seuranta</span>
-        <span class="stag stag-ai">Tekoälyn hyödyntäminen koko prosessissa — suunnittelusta sisällöntuotantoon ja analytiikkaan saakka</span>
-      </div>
+    <div class="cat">
+      <div class="cat-label">Mittaaminen ja kehittäminen</div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Analytiikka ja tulosten seuranta</span></div>
+      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name ai">Tekoälyn hyödyntäminen koko prosessissa — suunnittelusta sisällöntuotantoon ja analytiikkaan saakka</span></div>
     </div>
   </div>
 
