@@ -105,14 +105,12 @@
 
 <style>
   /* ── OSAAMISET ── */
-  .skill-grid { display:flex; flex-direction:column; gap:1.4rem; margin:1.5rem 0 2.5rem; }
-  .skill-cat-label { font-size:.67rem; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--purple); font-weight:600; margin-bottom:.5rem; }
+  .skill-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
+  .skill-cat { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
+  .skill-cat-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); font-weight:600; margin-bottom:1rem; }
   .skill-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
-  .stag { padding:.28rem .75rem; background:var(--bg-card); border:1px solid var(--border);
-    border-radius:999px; font-size:.8rem; color:var(--text); line-height:1.4; }
-  .stag-ai { background:rgba(110,94,240,.07); border-color:rgba(110,94,240,.3);
-    color:var(--purple); font-style:italic; }
+  .stag { padding:.28rem .75rem; background:var(--bg); border:1px solid var(--border); border-radius:999px; font-size:.82rem; color:var(--text); line-height:1.4; }
+  .stag-ai { background:rgba(110,94,240,.07); border-color:rgba(110,94,240,.3); color:var(--purple); font-style:italic; }
 </style>
 <style id="jt-consent-css">
   #jt-cookie-banner {
